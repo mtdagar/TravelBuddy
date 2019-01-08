@@ -1,0 +1,76 @@
+body{
+	margin: 0;
+	margin: 0;
+	background: url("../images/stockimg.png");
+	backgroud-size: cover;
+	background-position: center;
+	font-family: Poppins;
+}
+
+.navbar.transparent.navbar-inverse .navbar-inner {
+    border-width: 0px;
+    -webkit-box-shadow: 0px 0px;
+    box-shadow: 0px 0px;
+    background-color: rgba(0,0,0,0.0);
+    background-image: -webkit-gradient(linear, 50.00% 0.00%, 50.00% 100.00%, color-stop( 0% , rgba(0,0,0,0.00)),color-stop( 100% , rgba(0,0,0,0.00)));
+    background-image: -webkit-linear-gradient(270deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+    background-image: linear-gradient(180deg,rgba(0,0,0,0.00) 0%,rgba(0,0,0,0.00) 100%);
+}
+
+.navbar{
+	font-family: Poppins;
+	font-size: 1.4em !important;
+}
+
+
+.navbar-nav > li{
+  padding-left:40px;
+  padding-right:40px;
+  padding-top: 5px;
+}
+
+
+.navbar-brand{
+	padding-left:40px;
+	padding-right:40px;
+  	padding-top: 5px;
+}
+
+@media only screen and (min-width: 600px) {
+  	.form-container {
+    	width: 500px;
+  	}
+}
+
+@media only screen and (max-width: 600px) {
+  	.form-container {
+    	width: 400px;
+  	}
+}
+
+
+.margin-bottom{
+	margin-bottom: 35px;
+}
+
+
+.form-container{
+	background: #FFF;
+	border-radius: 15px;
+	margin-top: 13%;
+
+	padding-top: 40px;
+	padding-bottom: 40px;
+	padding-left: 30px;
+	padding-right: 30px;
+
+	-webkit-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+	-moz-box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
+}
+
+
+
+
+
+
