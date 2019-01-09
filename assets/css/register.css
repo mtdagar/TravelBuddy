@@ -1,8 +1,5 @@
 body{
-	margin: 0;
-	margin: 0;
 	background: url("../images/stockimg.png");
-	backgroud-size: cover;
 	background-position: center;
 	font-family: Poppins;
 }
@@ -36,16 +33,30 @@ body{
   	padding-top: 5px;
 }
 
+#msform {
+	width: 400px;
+	margin: 30px auto;
+	text-align: center;
+	position: relative;
+}
+
 @media only screen and (min-width: 600px) {
+
   	.form-container {
-    	width: 500px;
+    	width: 450px;
   	}
+
 }
 
 @media only screen and (max-width: 600px) {
   	.form-container {
-    	width: 400px;
+  		background: red;
+    	width: 380px;
   	}
+
+   	#progressbar{
+		padding-top: 20px;
+	} 	
 }
 
 
@@ -54,10 +65,73 @@ body{
 }
 
 
+/*Hide all except first fieldset*/
+#msform fieldset:not(:first-of-type) {
+	display: none;
+}
+
+
+#progressbar{
+	margin-bottom: 30px;
+	overflow: hidden;
+	width: 400px;
+	margin: 10% auto 20px auto;
+
+	/*CSS counters to number the steps*/
+	counter-reset: step;
+}
+
+#progressbar li{
+	list-style-type: none;
+	width: 33.33%;
+	float: left;
+	position: relative;
+}
+
+#progressbar li:before {
+	content: counter(step);
+	counter-increment: step;
+	width: 20px;
+	line-height: 20px;
+	display: block;
+	text-align: center;
+	font-size: 0px;
+	color: #333;
+	background: rgba(255, 255, 255, 0.4);
+	border-radius: 10px;
+	margin: 0 auto 5px auto;
+}
+
+/*progressbar connectors*/
+#progressbar li:after {
+	content: '';
+	width: 84%;
+	height: 2px;
+	background: rgba(255, 255, 255, .4);
+	position: absolute;
+	left: -42%;
+	top: 9px;
+	z-index: -1; /*put it behind the numbers*/
+}
+
+#progressbar li:first-child:after {
+	/*connector not needed before the first step*/
+	content: none; 
+}
+
+/*marking active/completed steps green*/
+/*The number of the step and the connector before it = green*/
+#progressbar li.active:before,  #progressbar li.active:after{
+	background: #FFF;
+	color: white;
+}
+
 .form-container{
 	background: #FFF;
 	border-radius: 15px;
-	margin-top: 13%;
+	margin-top: 10px;
+	text-align: center;
+	position: relative;
 
 	padding-top: 40px;
 	padding-bottom: 40px;
@@ -69,8 +143,6 @@ body{
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
 }
 
-
-
-
-
-
+#msform fieldset {
+	position: relative;
+}
