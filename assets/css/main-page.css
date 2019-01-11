@@ -1,17 +1,20 @@
 body{
+  height: 100%;
+  width: 100%;
   margin: 0;
   padding: 0;
-  font-family: arial;
-  background-color: orange;
-  overflow: hidden;
+  background: url("../images/mapsample.png");
+  background-size: cover;
+  font-family: Poppins;
 }
 
 .sidebar{
   position: fixed;
   top: 0;
-  left:-250px;
-  background-color: #262626;
-  width: 250px;
+  left:-400px;
+  background: rgb(2,0,36);
+  background: linear-gradient(149deg, rgba(2,0,36,1) 0%, rgba(255,146,160,1) 0%, rgba(255,147,96,1) 100%);
+  width: 400px;
   height: 100%;
   transition: .3s;
 }
