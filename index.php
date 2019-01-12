@@ -32,13 +32,13 @@
               <li class="nav-item">
                 <a class="nav-link" href="#">LOGIN</a>
               </li>
-              
+
             </ul>
           </div>
         </nav>
 
 
-  <!-- Banner -->    
+  <!-- Banner -->
 	<div id="mainbanner" class="view">
         <div class="full-bg-img">
         	<div class="banner">
@@ -47,7 +47,7 @@
         		<span class="transparent"
         	</div>
 
-        </div>   
+        </div>
     </div>
 
 </body>

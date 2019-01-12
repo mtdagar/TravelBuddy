@@ -1,0 +1,158 @@
+html,
+body,
+header,
+#mainbanner{
+	height: 100%;
+}
+
+ul{
+  padding-left: 0;
+}
+
+*:focus {
+    outline: none;
+}
+
+input:focus::-webkit-input-placeholder {
+    opacity: 0;
+    transition-duration: 0.15s;
+}
+
+#mainbanner{
+	background: url("../images/citystock.png")no-repeat center center fixed;
+	-webkit-background-size: cover;
+	-moz-background-size: cover;
+	-o-background-size: cover;
+	background-size: cover;
+}
+
+.navbar{
+	font-family: Poppins;
+	font-size: 1.4em !important;
+}
+
+.navbar-nav > li{
+  padding-left:40px;
+  padding-right:40px;
+  padding-top: 5px;
+}
+
+.navbar img{
+ display: block;
+ max-height:35px;
+ width: auto;
+ height: auto;
+ padding-top: 5px;
+}
+
+.navbar-brand{
+	padding-left:40px;
+	padding-right:40px;
+  padding-top: 5px;
+}
+
+.login-disp{
+  color: #FFFFFF;
+  font-family: Poppins;
+  font-weight: bold;
+}
+
+.banner{
+	text-align: center;
+	width: 50%;
+	margin-left: auto;
+  margin-right: auto;
+	padding-top: 200px;
+}
+
+.login-page{
+  width: 360px;
+  padding: 10%;
+  margin: auto;
+}
+
+.form{
+  position: relative;
+  z-index: 1;
+  max-width: 360px;
+  margin: 0 auto 100px;
+  padding: 45px;
+  font-family: Poppins;
+}
+
+.form input{
+  background-color: rgba(255, 255, 255, 0.2);
+  width: 100%;
+  border: 0;
+  border-radius: 50px;
+  margin: 0 0 15px;
+  padding: 10px;
+  box-sizing: border-box;
+}
+
+::placeholder {
+  color: #ffffff;
+  opacity: 0.7;
+  font-size: 0.8rem;
+}
+
+.form button{
+  width: 100%;
+  padding: 10px;
+  background: #E57B84;
+  border: none;
+  border-radius: 50px;
+  color: #ffffff;
+  margin-top: 30px;
+}
+
+.form button:hover{
+  background: #ffffff;
+  color: #E57B84;
+  cursor: pointer;
+  transition-duration: 0.3s;
+}
+
+.options{
+    text-align: center;
+}
+
+.options li{
+  list-style-type: none;
+  display: inline;
+}
+
+.options a:hover{
+  color: #F86D57;
+  transition-duration: 0.3s;
+}
+
+.options a{
+  text-decoration: none;
+  color: #ffffff;
+  font-size: 10px;
+}
+
+.username{
+  background: url(../images/email.png) no-repeat scroll 7px 7px;
+  background-size: 18px;
+  background-position: 15px 13px;
+}
+
+.pass{
+  background: url(../images/pass.png) no-repeat scroll 7px 7px;
+  background-size: 12px;
+  background-position: 18px 10px;
+}
+
+input[type="email"]
+{
+    color:#FFFFFF;
+    padding-left: 40px;
+}
+
+input[type="password"]
+{
+    color:#FFFFFF;
+    padding-left: 40px;
+}
