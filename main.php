@@ -2,6 +2,7 @@
 <html lang="en" >
 
 <html>
+
 <head>
 	<meta charset="UTF-8">
 	<title>TravelBuddy</title>
@@ -15,15 +16,15 @@
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" href="assets/css/main-page.css">
 </head>
+
 <body>
   	<div class="sidebar">
-  		<ul>
-		    <li><a href="#">Home</a></li>
-		    <li><a href="#">About</a></li>
-		    <li><a href="#">Services</a></li>
-		    <li><a href="#">Portfolio</a></li>
-		    <li><a href="#">Contact</a></li>
-  		</ul>
+  		
+  		<form class="sidebar-form">
+		    <input type="email" class="form-control" id="startLocation" placeholder="Starting point">
+		    <input type="email" class="form-control" id="endLocation" placeholder="Destination">
+		  <button type="submit" class="btn btn-primary">Submit</button>
+		</form>
 		  <button class="sidebarBtn">
 		    <span></span>
 		  </button>

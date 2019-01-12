@@ -1,8 +1,4 @@
 body{
-  height: 100%;
-  width: 100%;
-  margin: 0;
-  padding: 0;
   background: url("../images/mapsample.png");
   background-size: cover;
   font-family: Poppins;
@@ -17,27 +13,7 @@ body{
   width: 400px;
   height: 100%;
   transition: .3s;
-}
-
-ul{
-  margin: 0;
-  padding: 20px 0;
-}
-
-ul li{
-  list-style: none;
-}
-
-ul li a{
-  padding: 10px 20px;
-  color: #fff;
-  display: block;
-  text-decoration: none;
-  border-bottom: 1px solid rgba(0,0,0,0.2);
-}
-
-ul li a:hover{
-  background-color: grey;
+  padding-right: 10px;
 }
 
 .sidebarBtn{
@@ -102,3 +78,11 @@ ul li a:hover{
   top:0;
   transform: rotate(45deg);
 }
+
+.form-control{
+  height: 45px;
+  width: 80%;
+  margin: 20px auto 20px auto;
+  border-radius: 10px;
+}
+
