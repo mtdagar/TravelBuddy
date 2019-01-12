@@ -43,11 +43,9 @@ header,
 }
 
 .navbar-brand img{
- display: block;
- max-height:35px;
- width: auto;
- height: auto;
- padding-top: 5px;
+  display: block;
+  max-height:35px;
+  width: auto;
 }
 
 .display-2{

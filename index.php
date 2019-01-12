@@ -20,7 +20,7 @@
 
 	<!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg transparent navbar-dark fixed-top">
-          <a class="navbar-brand" href="index.php"><img src="assets/images/logo.png" alt="travelBuddy"></a>
+          <a class="navbar-brand" href="index.php"><img src="assets/icons/logo.png" alt="travelBuddy"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
@@ -43,7 +43,7 @@
         <div class="full-bg-img">
         	<div class="banner">
         		<h1 class="display-2">Fall in love with<br> your commute.</h1>
-        		<a href="#" class="transparent-btn">SIGN UP NOW</a>
+        		<a href="register.php" class="transparent-btn">SIGN UP NOW</a>
         	</div>
 
         </div>
