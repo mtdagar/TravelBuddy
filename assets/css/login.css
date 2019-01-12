@@ -134,13 +134,13 @@ input:focus::-webkit-input-placeholder {
 }
 
 .username{
-  background: url(../images/email.png) no-repeat scroll 7px 7px;
+  background: url(../icons/email.png) no-repeat scroll 7px 7px;
   background-size: 18px;
   background-position: 15px 13px;
 }
 
 .pass{
-  background: url(../images/pass.png) no-repeat scroll 7px 7px;
+  background: url(../icons/pass.png) no-repeat scroll 7px 7px;
   background-size: 12px;
   background-position: 18px 10px;
 }
