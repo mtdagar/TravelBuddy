@@ -1,7 +1,7 @@
  <?php
 require_once("conn.php");
 
-if(isset($_POST['save'])){
+if(isset($_POST['submit'])){
 $fname=$_POST['fname'];
 $lname =$_POST['lname'];
 $email=$_POST['email'];
