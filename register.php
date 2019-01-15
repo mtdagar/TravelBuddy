@@ -68,7 +68,7 @@
 
 
     <!-- Form -->
-    <form id="msform">
+    <form id="msform" method="post" action="actions.php">
 		<fieldset class="container form-container">
 			<h2>Create an account</h2>
 			  <div class="form-row">
