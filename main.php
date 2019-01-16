@@ -23,8 +23,9 @@
   		<form class="sidebar-form">
 		    <input type="email" class="form-control" id="startLocation" placeholder="Starting point">
 		    <input type="email" class="form-control" id="endLocation" placeholder="Destination">
-		  <button type="submit" class="btn btn-primary">Submit</button>
+		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Submit</button>
 		</form>
+
 		  <button class="sidebarBtn">
 		    <span></span>
 		  </button>
