@@ -66,11 +66,6 @@ body{
 }
 
 
-.margin-bottom{
-	margin-bottom: 35px;
-}
-
-
 /*Hide all except first fieldset*/
 #msform fieldset:not(:first-of-type) {
 	display: none;
