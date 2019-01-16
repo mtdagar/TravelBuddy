@@ -20,17 +20,17 @@
 
 	<!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg transparent navbar-dark fixed-top">
-          <a class="navbar-brand" href="index.php"><img src="assets/images/logo.png" alt="travelBuddy"></a>
+          <a class="navbar-brand" href="index.php"><img src="assets/icons/logo.png" alt="travelBuddy"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="login.php">LOGIN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">LOGIN</a>
+                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
               </li>
 
             </ul>
@@ -43,7 +43,7 @@
         <div class="full-bg-img">
         	<div class="banner">
         		<h1 class="display-2">Fall in love with<br> your commute.</h1>
-        		<a href="#" class="transparent-btn">SIGN UP NOW</a>
+        		<a href="register.php" class="transparent-btn">SIGN UP NOW</a>
         	</div>
 
         </div>

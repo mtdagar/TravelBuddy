@@ -1,3 +1,4 @@
+//connection to localhost
 <?php
 session_start();
 $servername = "localhost";

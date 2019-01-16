@@ -40,17 +40,17 @@
 
 	<!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg transparent navbar-dark fixed-top">
-       	<a class="navbar-brand" href="#">Navbar</a>
+       	<a class="navbar-brand" href="index.php"><img src="assets/icons/logo.png" alt="travelBuddy"></a>
        	<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
    		    <span class="navbar-toggler-icon"></span>
        	</button>
        	<div class="collapse navbar-collapse" id="navbarNavDropdown">
       	    <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+              	<a class="nav-link" href="login.php">LOGIN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">LOGIN</a>
+                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
               </li>
               
             </ul>
@@ -68,15 +68,17 @@
 
 
     <!-- Form -->
-    <form id="msform">
+    <form id="msform" method="post" action="actions.php">
+
+    	<!-- Step 1 -->
 		<fieldset class="container form-container">
 			<h2>Create an account</h2>
-			  <div class="form-row">
+			  <div class="form-row" style="padding-top: 20px; padding-bottom: 20px">
 			    <div class="form-group col-md-6">
-			      <input type="text" class="form-control margin-bottom" id="fname" placeholder="First Name">
+			      <input type="text" class="form-control" id="fname" placeholder="First Name">
 			    </div>
 			    <div class="form-group col-md-6">
-			      <input type="text" class="form-control margin-bottom" id="lname" placeholder="Last Name">
+			      <input type="text" class="form-control" id="lname" placeholder="Last Name">
 			    </div>
 			  </div>
 			  <div class="form-group">
@@ -88,40 +90,25 @@
 			  <button type="button" name ="next" class="btn btn-primary btn-block next">Next</button>
 		</fieldset>
 
+		<!-- Step 2 -->
 		<fieldset class="container form-container">
-			<h2>Enter your details</h2>
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <input type="text" class="form-control margin-bottom" id="fname2" placeholder="First Name">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <input type="text" class="form-control margin-bottom" id="lname2" placeholder="Last Name">
-			    </div>
+			<h2>How do you commute?</h2>
+			  </div>
+			  <div class="form-group" style="padding-top: 20px;">
+			    <input type="text" class="form-control margin-bottom" id="startingPoint" placeholder="Starting point">
 			  </div>
 			  <div class="form-group">
-			    <input type="text" class="form-control margin-bottom" id="email2" placeholder="Email">
-			  </div>
-			  <div class="form-group">
-			    <input type="Password" class="form-control margin-bottom" id="password2" placeholder="Password">
+			    <input type="text" class="form-control margin-bottom" id="destination" placeholder="Destination">
 			  </div>
 			  <button type="button" name ="next" class="btn btn-primary btn-block next">Next</button>
 		</fieldset>
 
+
+		<!-- Step 3 -->
 		<fieldset class="container form-container">
-			<h2>How do you commute?</h2>
-			  <div class="form-row">
-			    <div class="form-group col-md-6">
-			      <input type="text" class="form-control margin-bottom" id="fname3" placeholder="First Name">
-			    </div>
-			    <div class="form-group col-md-6">
-			      <input type="text" class="form-control margin-bottom" id="lname3" placeholder="Last Name">
-			    </div>
-			  </div>
-			  <div class="form-group">
-			    <input type="text" class="form-control margin-bottom" id="email3" placeholder="Email">
-			  </div>
-			  <div class="form-group">
-			    <input type="Password" class="form-control margin-bottom" id="password3" placeholder="Password">
+			<h3>Something about yourself</h3>
+			  <div class="form-group" style="padding-top: 20px; padding-bottom: 20px">
+			    <textarea class="form-control" id="bio" rows="3"></textarea>
 			  </div>
 			  <button type="submit" name ="submit" class="btn btn-primary btn-block submit">Sign up</button>
 		</fieldset>

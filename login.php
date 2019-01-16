@@ -22,17 +22,17 @@
 
   <!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg transparent navbar-dark fixed-top">
-          <a class="navbar-brand" href="index.html"><img src="assets/icons/logo.png" alt="travelBuddy"></a>
+          <a class="navbar-brand" href="index.php"><img src="assets/icons/logo.png" alt="travelBuddy"></a>
           <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavDropdown" aria-controls="navbarNavDropdown" aria-expanded="false" aria-label="Toggle navigation">
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto">
               <li class="nav-item active">
-                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" href="register.php">SIGN UP</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">LOGIN</a>
+                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
               </li>
 
             </ul>
