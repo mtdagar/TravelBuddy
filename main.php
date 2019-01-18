@@ -5,6 +5,8 @@
 
 <head>
 	<meta charset="UTF-8">
+	<meta name="viewport" content="initial-scale=1.0, width=device-width"/>
+
 	<title>TravelBuddy</title>
 
 	<!-- Bootstrap CDN -->
@@ -13,8 +15,8 @@
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
-	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
-    
+	
+    <!-- Here Maps depend -->
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
     type="text/javascript" charset="utf-8"></script>
     <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
@@ -29,7 +31,7 @@
 
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" href="assets/css/main-page.css">
-	<link href="assets/css/map.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/map.css">
 </head>
 
 <body>
@@ -44,9 +46,7 @@
 		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Submit</button>
 		</form>
 
-		  <button class="sidebarBtn">
-		    <span></span>
-		  </button>
+		  <div class="sidebtn"></div>
 	</div>
   
 

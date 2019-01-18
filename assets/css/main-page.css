@@ -5,7 +5,7 @@ body{
 .sidebar{
   position: fixed;
   top: 0;
-  left:-400px;
+  left:-351px;
   background: rgb(2,0,36);
   background: linear-gradient(149deg, rgba(2,0,36,1) 0%, rgba(255,146,160,1) 0%, rgba(255,147,96,1) 100%);
   width: 400px;
@@ -14,67 +14,28 @@ body{
   padding-right: 10px;
 }
 
-.sidebarBtn{
-  position: absolute;
-  top: 0;
-  right:-50px;
-  width:50px;
-  height:50px;
-  box-sizing:border-box;
-  cursor: pointer;
-  background-color: #f5f5f5;
-  border: none;
-  outline: none;
-}
-
-.sidebarBtn span{
-  display: block;
-  width: 35px;
-  height: 3px;
-  background-color: #262626;
-  position: absolute;
-  top:24px;
-  transition: .3s;
-}
-
-.sidebarBtn span:before{
-  content: '';
-  width: 100%;
-  height: 3px;
-  background-color: #262626;
-  position: absolute;
-  top: -10px;
-  left: 0;
-  transition: .3s;
-}
-
-.sidebarBtn span:after{
-  content: '';
-  width: 100%;
-  height: 3px;
-  background-color: #262626;
-  position: absolute;
-  top: 10px;
-  left: 0;
-  transition: .3s;
-}
-
 .active{
-  left: 0;
+  left: 0px;
 }
 
-.sidebarBtn.toggle span{
-  background-color: transparent;
+.sidebtn{
+  width: 30px;
+  height: 30px;
+  margin-left: 360px;
+  margin-top: 100px;
+  border: 4px solid #fff;
+  outline: none;
+  cursor: pointer;
+  transform: rotate(135deg);
+  border-left: none;
+  border-top: none;
+  transition: .4s;
 }
 
-.sidebarBtn.toggle span:before{
-  top:0;
+.sidebtn.active{
   transform: rotate(-45deg);
-}
-
-.sidebarBtn.toggle span:after{
-  top:0;
-  transform: rotate(45deg);
+  margin-left: 355px;
+  transition: .4s;
 }
 
 .form-control{
@@ -88,4 +49,6 @@ body{
   margin-left: 40px;
   border-radius: 10px;
 }
+
+
 
