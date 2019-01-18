@@ -15,6 +15,7 @@
 
 	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
     
+    <!--map api-->
     <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
     type="text/javascript" charset="utf-8"></script>
     <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
@@ -29,7 +30,7 @@
 
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" href="assets/css/main-page.css">
-	<link href="assets/css/map.css" rel="stylesheet">
+	<link rel="stylesheet" href="assets/css/map.css" >
 </head>
 
 <body>
