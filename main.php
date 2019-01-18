@@ -13,11 +13,29 @@
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
+	<meta name="viewport" content="initial-scale=1.0, width=device-width" />
+    
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
+    type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" 
+     type="text/javascript" charset="utf-8"></script>
+    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" 
+      type="text/javascript" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" 
+      href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
+    
+
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" href="assets/css/main-page.css">
+	<link href="assets/css/map.css" rel="stylesheet">
 </head>
 
 <body>
+
+	<div id="mapContainer"></div>
+
   	<div class="sidebar">
   		
   		<form class="sidebar-form">
@@ -32,14 +50,10 @@
 	</div>
   
 
-
-
-
-
   	<script src='https://code.jquery.com/jquery-3.2.1.js'></script>
 
-  
-
     <script type="text/javascript" src="includes/handlers/main-page.js"></script>
+
+    <script src="includes/handlers/map.js" type="text/javascript" charset="utf-8"></script>
 </body>
 </html>
