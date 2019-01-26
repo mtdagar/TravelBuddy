@@ -6,7 +6,7 @@ function sanitizeText($inputText){
 }
 
 
-if(isset(($_POST['registerButton']))){
+if(isset($_POST['registerButton'])){
 	//Register button pressed
 	
 	//first name
@@ -23,14 +23,25 @@ if(isset(($_POST['registerButton']))){
 	//password
 	$password = sanitizeText($_POST['password']);
 
+/*
+	//startLocation
+	$startLocation = sanitizeText($_POST['startLocation']);
+
+	//endLocation
+	$endLocation = sanitizeText($_POST['endLocation']);
+
+	//endLocation
+	$bio = sanitizeText($_POST['bio']);	
+*/
 
 	$wasSuccessful = $account->register($firstName, $lastName, $email, $password);
 
 	if($wasSuccessful) {
+		$message = "wasSuccessful";
+		echo "<script type='text/javascript'>alert('$message');</script>";
 		header("Location: index.php");
 	}
 }
-
 
 
 ?>

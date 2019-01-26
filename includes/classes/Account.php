@@ -1,9 +1,5 @@
-
-
-
-
-
 <?php
+
 	class Account {
 
 		private $con;
@@ -20,9 +16,11 @@
 			$this->validateEmail($em);
 			$this->validatePassword($pw);
 
-			if(empty($this->errorArray)) {
+			if(empty($this->errorArray)==true) {
 				//Insert into db
-				return insertUserDetails($fn, $ln, $em, $pw);
+				$message = "insertUserDetails";
+				echo "<script type='text/javascript'>alert('$message');</script>";
+				return $this->insertUserDetails($fn, $ln, $em, $pw);
 			}
 			else {
 				return false;
@@ -39,24 +37,14 @@
 
 		private function insertUserDetails($fn, $ln, $em, $pw) {
 			$encryptedPw = md5($pw);
-			$profilePic = "assets/images/profile-pics/head_emerald.png";
 			$date = date("Y-m-d");
 
-			$result = mysqli_query($this->con, "INSERT INTO users VALUES ('', $fn', '$ln', '$em', '$encryptedPw', '$date', '$profilePic')");
-
+			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', NULL, NULL, NULL )");
+			$message = "user details prolly inserted";
+echo "<script type='text/javascript'>alert('$message');</script>";
 			return $result;
 		}
 
-		private function validateUsername($un) {
-
-			if(strlen($un) > 25 || strlen($un) < 5) {
-				array_push($this->errorArray, Constants::$usernameCharacters);
-				return;
-			}
-
-			//TODO: check if username exists
-
-		}
 
 		private function validateFirstName($fn) {
 			if(strlen($fn) > 25 || strlen($fn) < 2) {
@@ -95,6 +83,27 @@
 				return;
 			}
 
+		}
+
+		private function validateStartLocation($startl) {
+			if(strlen($startl) > 100 || strlen($startl) < 2) {
+				array_push($this->errorArray, Constants::$startLocationCharacters);
+				return;
+			}
+		}
+
+		private function validateEndLocation($endl) {
+			if(strlen($endl) > 100 || strlen($startl) < 2) {
+				array_push($this->errorArray, Constants::$endLocationCharacters);
+				return;
+			}
+		}
+
+		private function validateBio($bio) {
+			if(strlen($bio) > 500) {
+				array_push($this->errorArray, Constants::$bioCharacters);
+				return;
+			}
 		}
 
 

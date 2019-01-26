@@ -1,5 +1,6 @@
 <?php
 
+
 	include("includes/config.php");
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
@@ -16,6 +17,7 @@
 	}
 
 ?>
+
 
 <html>
 
@@ -67,45 +69,66 @@
 
 
     <!-- Form -->
-    <form id="registerForm" action="register.php" method="POST">
+    <form id="msForm" action="register.php" method="POST">
 
     	<!-- Step 1 -->
-    	<div class="container form-container">
-
+		<fieldset class="container form-container">
 			<h2>Create an account</h2>
-
 			  <div class="form-row" style="padding-top: 20px; padding-bottom: 20px">
 			    <div class="form-group col-md-6">
-			      <input id="firstName" name="firstName" type="text" class="form-control margin-bottom" placeholder="First name" value="<?php getInputValue('firstName') ?>" required>
+			      <input type="text" class="form-control" id="firstName" placeholder="First Name" value="<?php getInputValue('firstName') ?>">
 			    </div>
 			    <div class="form-group col-md-6">
-			      <input id="lastName" name="lastName" type="text" class="form-control margin-bottom" placeholder="Last name" value="<?php getInputValue('lastName') ?>" required>
+			      <input type="text" class="form-control" id="lastName" placeholder="Last Name" value="<?php getInputValue('lastName') ?>">
 			    </div>
 			  </div>
-
 			  <div class="form-group">
-			  	<input id="email" name="email" type="text" class="form-control margin-bottom" placeholder="Email" value="<?php getInputValue('email') ?>" required>
+			    <input type="text" class="form-control margin-bottom" id="email" placeholder="Email" value="<?php getInputValue('email') ?>">
 			  </div>
-
 			  <div class="form-group">
-			    <input id="password" name="password" type="password" class="form-control margin-bottom" placeholder="Password" required>
+			    <input type="Password" class="form-control margin-bottom" id="password" placeholder="Password">
 			  </div>
+			  <button type="button" name ="next" class="btn btn-primary btn-block next">Next</button>
+		</fieldset>
 
-			  <button type="submit" name ="registerButton" class="btn btn-primary">Sign up</button>
+		<!-- Step 2 -->
+		<fieldset class="container form-container">
+			<h2>How do you commute?</h2>
+			  </div>
+			  <div class="form-group" style="padding-top: 20px;">
+			    <input type="text" class="form-control margin-bottom" id="startLocation" placeholder="Starting point" value="<?php getInputValue('startLocation') ?>">
+			  </div>
+			  <div class="form-group">
+			    <input type="text" class="form-control margin-bottom" id="endLocation" placeholder="Destination" value="<?php getInputValue('endLocation') ?>">
+			  </div>
+			  <button type="button" name ="next" class="btn btn-primary btn-block next">Next</button>
+		</fieldset>
 
-		</div>
 
-	
+		<!-- Step 3 -->
+		<fieldset class="container form-container">
+			<h3>Something about yourself</h3>
+
 			<?php echo $account->getError(Constants::$firstNameCharacters); ?>
 			<?php echo $account->getError(Constants::$lastNameCharacters); ?>
 			<?php echo $account->getError(Constants::$emailInvalid); ?>
 			<?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
 			<?php echo $account->getError(Constants::$passwordCharacters); ?>
+			<?php echo $account->getError(Constants::$startLocationCharacters); ?>
+			<?php echo $account->getError(Constants::$endLocationCharacters); ?>
+			<?php echo $account->getError(Constants::$bioCharacters); ?>
 			
+
+			  <div class="form-group" style="padding-top: 20px; padding-bottom: 20px">
+			    <textarea class="form-control" id="bio" rows="3" value="<?php getInputValue('bio') ?>"></textarea>
+			  </div>
+
+			  <button type="submit" name ="registerButton">Sign up</button>
+			  
+		</fieldset>
+
+		
 	</form>
-
-
-
 
 	<!-- jQuery -->
   	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
