@@ -2,6 +2,10 @@
 
 Never travel alone.
 
+
+![Landing Page](assets/images/landing-page-snap.png)
+
+
 ## About
 
 A collaborative project in development by Meet Dagar, Dikshant Rawat, Purusharth Dang and Aditya Mehta.
