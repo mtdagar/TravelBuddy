@@ -62,8 +62,8 @@
 
     <!-- progressbar -->
 	<ul id="progressbar">
-		<li class="active"></li>
 		<li></li>
+		<li class="active"></li>
 		<li></li>
 	</ul>
 
@@ -134,9 +134,13 @@
   	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 	
-	
+
  	<!-- Custom js for registeration pages -->
-	<script type="text/javascript" src="includes/handlers/multistep-registration-form.js"></script>
+	<script type="text/javascript">
+		var index = 2;
+		$("#progressbar li").index.addClass("active");
+
+	</script>
 
 </body>
 

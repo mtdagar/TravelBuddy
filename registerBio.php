@@ -62,7 +62,7 @@
 	<ul id="progressbar">
 		<li class="active"></li>
 		<li class="active"></li>
-		<li></li>
+		<li class="active"></li>
 	</ul>
 
 
@@ -72,23 +72,19 @@
     	<!-- Step 1 -->
     	<div class="container form-container">
 
-			<h2>How do you commute?</h2>
+			<h3>Something about yourself</h3>
 
 			  <div class="form-group" style="padding-top: 20px; padding-bottom: 20px">
-			    <input type="text" class="form-control margin-bottom" id="startLocation" placeholder="Starting point" value="<?php getInputValue('startLocation') ?>">
-			  </div>
-			  <div class="form-group" style="padding-bottom: 20px">
-			    <input type="text" class="form-control margin-bottom" id="endLocation" placeholder="Destination" value="<?php getInputValue('endLocation') ?>">
+			    <textarea class="form-control" id="bio" rows="3" value="<?php getInputValue('bio') ?>"></textarea>
 			  </div>
 
 			  <p>
 			  	<ul class="errorList" style="margin-bottom: 20px">
-			  		<li><?php echo $account->getError(Constants::$startLocationCharacters); ?></li>
-			  		<li><?php echo $account->getError(Constants::$endLocationCharacters); ?></li>
+			  		<li><?php echo $account->getError(Constants::$bioCharacters); ?></li>
 			  	</ul>
 			  </p>
 
-			  <button type="submit" name ="registerLocationButton" class="btn btn-primary">Set Commute</button>
+			  <button type="submit" name ="registerBioButton" class="btn btn-primary">Save</button>
 		</div>
 			  			
 	</form>
@@ -99,9 +95,6 @@
   	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 	
-	
- 	<!-- Custom js for registeration pages -->
-	<script type="text/javascript" src="includes/handlers/multistep-registration-form.js"></script>
 
 </body>
 
