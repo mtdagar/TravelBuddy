@@ -39,39 +39,6 @@ body{
   	width: auto;
 }
 
-#msform {
-	width: 400px;
-	margin: 30px auto;
-	text-align: center;
-	position: relative;
-}
-
-@media only screen and (min-width: 600px) {
-
-  	.form-container {
-    	width: 450px;
-  	}
-
-}
-
-@media only screen and (max-width: 600px) {
-  	.form-container {
-  		background: red;
-    	width: 380px;
-  	}
-
-   	#progressbar{
-		padding-top: 20px;
-	} 	
-}
-
-
-/*Hide all except first fieldset*/
-#msform fieldset:not(:first-of-type) {
-	display: none;
-}
-
-
 #progressbar{
 	margin-bottom: 30px;
 	overflow: hidden;
@@ -144,6 +111,34 @@ body{
 	box-shadow: 0px 0px 20px 0px rgba(0,0,0,0.5);
 }
 
-#msform fieldset {
-	position: relative;
+ul.errorList{
+	display: block;
+	list-style-type: none;
+	border-radius: 5px;
+	color: white;
+	font-size: 14px;
+	background:#ef5350;
+	padding-left: 0;
+}
+
+@media only screen and (min-width: 600px) {
+
+  	.form-container {
+    	width: 450px;
+  	}
+
+}
+
+@media only screen and (max-width: 600px) {
+  	.form-container {
+    	width: 380px;
+  	}
+
+   	#progressbar{
+		padding-top: 20px;
+	}	
+
+	ul.errorList{
+		font-size: 11px;
+	}
 }

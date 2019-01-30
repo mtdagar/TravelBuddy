@@ -83,24 +83,31 @@
 			    </div>
 			  </div>
 
-			  <div class="form-group">
+			  <div class="form-group" style="padding-bottom: 20px">
 			  	<input id="email" name="email" type="text" class="form-control margin-bottom" placeholder="Email" value="<?php getInputValue('email') ?>" required>
 			  </div>
 
-			  <div class="form-group">
+			  <div class="form-group" style="padding-bottom: 10px">
 			    <input id="password" name="password" type="password" class="form-control margin-bottom" placeholder="Password" required>
 			  </div>
+
+			  <p>
+			  	<ul class="errorList" style="margin-bottom: 20px">
+			  		<li><?php echo $account->getError(Constants::$firstNameCharacters); ?></li>
+			  		<li><?php echo $account->getError(Constants::$lastNameCharacters); ?></li>
+			  		<li><?php echo $account->getError(Constants::$emailInvalid); ?></li>
+			  		<li><?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?></li>
+			  		<li><?php echo $account->getError(Constants::$passwordCharacters); ?></li>
+			  	</ul>
+			  </p>
 
 			  <button type="submit" name ="registerButton" class="btn btn-primary">Sign up</button>
 
 		</div>
 
 	
-			<?php echo $account->getError(Constants::$firstNameCharacters); ?>
-			<?php echo $account->getError(Constants::$lastNameCharacters); ?>
-			<?php echo $account->getError(Constants::$emailInvalid); ?>
-			<?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?>
-			<?php echo $account->getError(Constants::$passwordCharacters); ?>
+			
+
 			
 	</form>
 
