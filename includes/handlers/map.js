@@ -1,7 +1,6 @@
 //----------------------------------------------------------------------------------------------------------
 												  //Variables used
 //----------------------------------------------------------------------------------------------------------
-
 	//start and end point coordinates obtained from registration page
 	var xs= {lat: 28.7041, lng: 77.1025},
 		  xe= {lat: 28.4595, lng: 77.0266},
@@ -29,9 +28,33 @@
 	var rendicon = new H.map.Icon('assets/icons/routeendmarker.png');
 
 //----------------------------------------------------------------------------------------------------------
+												  //Address to coordinates
+//----------------------------------------------------------------------------------------------------------
+	function geocode(platform) {
+	  var geocoder = platform.getGeocodingService(),
+	    geocodingParameters = {
+	      searchText: 'New Delhi',
+	      jsonattributes : 1
+	    };
+
+	  geocoder.geocode(
+	    geocodingParameters,
+	    onSuccess,
+	    onError
+	  	);
+	  function onSuccess(result) {
+	  var locations = result.response.view[0].result;
+	  addLocationsToMap(locations);
+  	addLocationsToPanel(locations);
+		}
+		
+		function onError(error) {
+  		alert('Ooops!');
+	}
+
+//----------------------------------------------------------------------------------------------------------
 												  //Adding markers
 //----------------------------------------------------------------------------------------------------------
-   
 	function addDraggableMarkers(map, behavior,start_0,end_0,start_1, end_1){
 
 		var startmarker0 = new H.map.Marker(start_0, {icon: starticon});
@@ -82,7 +105,6 @@
 //----------------------------------------------------------------------------------------------------------
 												  //Finding the route between the markers
 //----------------------------------------------------------------------------------------------------------
-
 	function findroute(start_0, end_0, start_1, end_1){
 	  
 	  var routingParameters0 = {
@@ -90,7 +112,7 @@
 		'waypoint0': start_0.lat+','+start_0.lng,
 		'waypoint1': end_0.lat+','+end_0.lng,
 		'representation': 'display',
-		'routeattributes': 'waypoints,summary,shape,legs'
+		'routeattributes': 'summary'
 	  };
 
 	  // Define a callback function to process the routing response:
@@ -131,17 +153,10 @@
 				map.setViewBounds(routeLine.getBounds());
 
 
-
 				//Printing route distance
-				console.log("Route 0 distance : " + route.summary.distance + "m");
-
-
+				//console.log("Route 0 distance : " + route.summary.distance + "m");
 			}
-	};
-
-
-
-
+		};
 
 	  // Get an instance of the routing service:
 	  var router = platform.getRoutingService();
@@ -155,11 +170,14 @@
 		});
 	}
 
-
-
-
 //----------------------------------------------------------------------------------------------------------
-//                                               Function Calls
+													//Function Calls
 //----------------------------------------------------------------------------------------------------------
-addDraggableMarkers(map,behavior,xs,xe,ys,ye); 
-findroute(xs,xe,ys,ye);
+	
+	addDraggableMarkers(map,behavior,xs,xe,ys,ye);
+	
+	var buttonRef = document.getElementById("setLocationBtn");
+	buttonRef.addEventListener("click", function() {
+	   findroute(xs,xe,ys,ye); 
+	}, false);
+	
