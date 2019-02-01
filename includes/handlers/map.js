@@ -30,7 +30,7 @@
 //----------------------------------------------------------------------------------------------------------
 												  //Address to coordinates
 //----------------------------------------------------------------------------------------------------------
-	function geocode(platform) {
+/*	function geocode(platform) {
 	  var geocoder = platform.getGeocodingService(),
 	    geocodingParameters = {
 	      searchText: 'New Delhi',
@@ -51,7 +51,7 @@
 		function onError(error) {
   		alert('Ooops!');
 	}
-
+*/
 //----------------------------------------------------------------------------------------------------------
 												  //Adding markers
 //----------------------------------------------------------------------------------------------------------
@@ -180,4 +180,3 @@
 	buttonRef.addEventListener("click", function() {
 	   findroute(xs,xe,ys,ye); 
 	}, false);
-	
