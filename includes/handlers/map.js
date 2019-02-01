@@ -1,7 +1,8 @@
 //start and end point coordinates obtained from registration page
 var x= {lat: 28.7041, lng: 77.1025},
- 	  y= {lat: 28.4595, lng: 77.0266};
-  //var z=
+ 	  y= {lat: 28.4595, lng: 77.0266},
+  	i= {lat: 28.720459926425686, lng: 77.06609829069782}
+  	j= {lat: 28.654611572607255, lng: 77.19773799758428};
     
 var platform = new H.service.Platform({
 	'app_id': 'RGqajGPjg7Rq21YzcF7V', 
@@ -17,14 +18,15 @@ var ui = H.ui.UI.createDefault(map, maptypes);
 var mapEvents = new H.mapevents.MapEvents(map);
 var behavior = new H.mapevents.Behavior(mapEvents);
 var router = platform.getRoutingService();
+var starticon = new H.map.Icon('assets/icons/startmarker.png');
+var endicon = new H.map.Icon('assets/icons/endmarker.png');  
+var rstarticon = new H.map.Icon('assets/icons/routestartmarker.png');
+var rendicon = new H.map.Icon('assets/icons/routeendmarker.png');
 
 //----------------------------------------------------------------------------------------------------------
                                                   //Adding markers
 //----------------------------------------------------------------------------------------------------------
-
-var starticon = new H.map.Icon('assets/icons/startmarker.png');
-var endicon = new H.map.Icon('assets/icons/endmarker.png');     
-      
+   
 function addDraggableMarkers(map, behavior,start,end){
 
   var startmarker = new H.map.Marker(start, {icon: starticon});
@@ -70,7 +72,7 @@ function addDraggableMarkers(map, behavior,start,end){
 //                                        Finding the route between the markers
 //----------------------------------------------------------------------------------------------------------
 
-function findroute(start, end){
+function findroute(start, end, start1, end1){
   var routingParameters = {
     'mode': 'fastest;car',
     'waypoint0': start.lat+','+start.lng,
@@ -108,7 +110,7 @@ function findroute(start, end){
     var routeLine = new H.map.Polyline(linestring, {
       style: { strokeColor: 'rgba(253, 151, 114, 1)', lineWidth: 4 }
     });
-
+/*
     // Create a marker for the start point:
     var startMarker = new H.map.Marker({
       lat: startPoint.latitude,
@@ -121,9 +123,13 @@ function findroute(start, end){
       lng: endPoint.longitude
     });
 
+*/
+		var startMarker = new H.map.Marker(start, {icon: rstarticon});
+		var endMarker = new H.map.Marker(end, {icon: rendicon});
+
     // Add the route polyline and the two markers to the map:
-    //map.addObjects([routeLine, startMarker, endMarker]);
-    map.addObjects([routeLine]);
+    map.addObjects([routeLine, startMarker, endMarker]);
+    //map.addObjects([routeLine]);
     // Set the map's viewport to make the whole route visible:
     map.setViewBounds(routeLine.getBounds());
     }
@@ -147,5 +153,6 @@ function findroute(start, end){
 //----------------------------------------------------------------------------------------------------------
 //                                               Function Calls
 //----------------------------------------------------------------------------------------------------------
-addDraggableMarkers(map,behavior,x,y);  
-findroute(x,y);
+addDraggableMarkers(map,behavior,x,y,i,j); 
+
+//findroute(x,y);
