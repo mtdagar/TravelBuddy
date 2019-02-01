@@ -1,4 +1,10 @@
-//start and end point coordinates obtained from registration page
+//starting and destination points from users as strings
+
+
+//API magic 
+
+
+//starting and destination points from users as floating point numbers
 var x= {lat: 28.7041, lng: 77.1025},
  	  y= {lat: 28.4595, lng: 77.0266},
   	i= {lat: 28.720459926425686, lng: 77.06609829069782}
@@ -8,12 +14,14 @@ var platform = new H.service.Platform({
 	'app_id': 'RGqajGPjg7Rq21YzcF7V', 
   'app_code': 'OmWPbo_ai_qFr8ONOLEDZg'
 });
+
 var maptypes = platform.createDefaultLayers();
 var map = new H.Map(document.getElementById('mapContainer'),maptypes.terrain.map,
-{
-  zoom: 11,
-  center: {lat: (x.lat+y.lat)/2, lng: (x.lng+y.lng)/2}
-});
+  {
+    zoom: 11,
+    center: {lat: (x.lat+y.lat)/2, lng: (x.lng+y.lng)/2}
+  });
+
 var ui = H.ui.UI.createDefault(map, maptypes);
 var mapEvents = new H.mapevents.MapEvents(map);
 var behavior = new H.mapevents.Behavior(mapEvents);
