@@ -89,7 +89,8 @@
 		'mode': 'fastest;car',
 		'waypoint0': start_0.lat+','+start_0.lng,
 		'waypoint1': end_0.lat+','+end_0.lng,
-		'representation': 'display'
+		'representation': 'display',
+		'routeattributes': 'waypoints,summary,shape,legs'
 	  };
 
 	  // Define a callback function to process the routing response:
@@ -128,8 +129,19 @@
 				map.addObjects([routeLine, startMarker, endMarker]);
 				// Set the map's viewport to make the whole route visible:
 				map.setViewBounds(routeLine.getBounds());
+
+
+
+				//Printing route distance
+				console.log("Route 0 distance : " + route.summary.distance + "m");
+
+
 			}
 	};
+
+
+
+
 
 	  // Get an instance of the routing service:
 	  var router = platform.getRoutingService();
@@ -150,4 +162,4 @@
 //                                               Function Calls
 //----------------------------------------------------------------------------------------------------------
 addDraggableMarkers(map,behavior,xs,xe,ys,ye); 
-//findroute(xs,xe,ys,ye);
+findroute(xs,xe,ys,ye);
