@@ -75,7 +75,7 @@
 //                                        Finding the route between the markers
 //----------------------------------------------------------------------------------------------------------
 
-	function findroute(start_0, end_0, start_1, 	){
+	function findroute(start_0, end_0){
 	  
 	  var routingParameters = {
 	    'mode': 'fastest;car',
