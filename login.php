@@ -46,10 +46,10 @@
           <div class="banner">
             <h1 class="login-disp">Login.</h1>
             <div class="form">
-              <form action="" class="login-form">
-                <input class="username form-text-box" type="email" label="E-mail" placeholder="E-Mail" >
-                <input class="pass" type="password" label="Password" placeholder="Password">
-                <button>Login</button>
+              <form method="POST" action="includes/handlers/login-handler.php" class="login-form">
+                <input class="username form-text-box" type="email" name="email" label="E-mail" placeholder="E-Mail" >
+                <input class="pass" type="password" label="Password" name="password" placeholder="Password">
+                <button name="login">Login</button>
                 <ul class="options">
                   <li><a href="register.php">Don't have an account?</a></li>
                   <li><a href="">Forgot Password?</a>
