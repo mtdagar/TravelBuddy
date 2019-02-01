@@ -40,8 +40,7 @@
 			$date = date("Y-m-d");
 
 			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', NULL, NULL, NULL )");
-			$message = "user details prolly inserted";
-echo "<script type='text/javascript'>alert('$message');</script>";
+
 			return $result;
 		}
 
@@ -67,8 +66,11 @@ echo "<script type='text/javascript'>alert('$message');</script>";
 				return;
 			}
 
-			//TODO: Check that username hasn't already been used
-
+			$checkEmailQuery = mysqli_query($this->con, "SELECT email FROM users WHERE email='$em'");
+			if(mysqli_num_rows($checkEmailQuery) != 0){
+				array_push($this->errorArray, Constants::$emailTaken);
+				return;
+			}
 		}
 
 		private function validatePassword($pw) {

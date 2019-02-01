@@ -96,6 +96,7 @@
 			  		<li><?php echo $account->getError(Constants::$firstNameCharacters); ?></li>
 			  		<li><?php echo $account->getError(Constants::$lastNameCharacters); ?></li>
 			  		<li><?php echo $account->getError(Constants::$emailInvalid); ?></li>
+			  		<li><?php echo $account->getError(Constants::$emailTaken); ?></li>
 			  		<li><?php echo $account->getError(Constants::$passwordNotAlphanumeric); ?></li>
 			  		<li><?php echo $account->getError(Constants::$passwordCharacters); ?></li>
 			  	</ul>
