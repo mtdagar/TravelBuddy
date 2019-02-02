@@ -3,6 +3,7 @@
 	include("includes/config.php");
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
+	include("includes/handlers/login-handler.php");
 
 	if(isset($_SESSION['userLoggedIn'])){
 		$userLoggedIn = $_SESSION['userLoggedIn'];
@@ -17,7 +18,9 @@
 
 
 	$account = new Account($con);
+	$userLoggedIn = $_SESSION['userLoggedIn'];
 
+	include("includes/handlers/register-handler.php");
 
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {
@@ -79,13 +82,13 @@
     <!-- Form -->
     <form id="registerLocation" action="registerLocation.php" method="POST">
 
-    	<!-- Step 1 -->
+    	<!-- Step 3 -->
     	<div class="container form-container">
 
 			<h3>Something about yourself</h3>
 
 			  <div class="form-group" style="padding-top: 20px; padding-bottom: 20px">
-			    <textarea class="form-control" id="bio" rows="3" value="<?php getInputValue('bio') ?>"></textarea>
+			    <textarea name='bio' class="form-control" rows="3" value="<?php getInputValue('bio') ?>"></textarea>
 			  </div>
 
 			  <p>
@@ -94,7 +97,7 @@
 			  	</ul>
 			  </p>
 
-			  <button type="submit" name ="registerBioButton" class="btn btn-primary">Save</button>
+			  <button type="submit" name ="registerBioBtn" class="btn btn-primary">Save</button>
 		</div>
 			  			
 	</form>

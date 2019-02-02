@@ -83,7 +83,7 @@
     <!-- Form -->
     <form id="registerLocation" action="registerLocation.php" method="POST">
 
-    	<!-- Step 1 -->
+    	<!-- Step 2 -->
     	<div class="container form-container">
 
 			<h2>How do you commute?</h2>

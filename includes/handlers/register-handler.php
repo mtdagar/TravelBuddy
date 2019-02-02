@@ -48,7 +48,7 @@ if(isset($_POST['registerButton'])){
 }
 
 if(isset($_POST['registerLocationBtn'])){
-	//Register button pressed
+	//RegisterLocation button pressed
 
 	$startLocation = sanitizeText($_POST['startLocation']);
 
@@ -60,6 +60,23 @@ if(isset($_POST['registerLocationBtn'])){
 
 	if($registerLocationSuccessful) {
 		header("Location: registerBio.php");
+	}else{
+		$loginError = Constants::$registrationFailed;
+    	echo "<script type='text/javascript'>alert('$loginError');</script>";
+	}
+}
+
+if(isset($_POST['registerBioBtn'])){
+	//RegisterBio button pressed
+
+	$bio = sanitizeText($_POST['bio']);
+
+	$email = $_SESSION['userLoggedIn'];
+
+	$registerBioSuccessful = $account->registerBio($bio, $email);
+
+	if($registerBioSuccessful) {
+		header("Location: main.php");
 	}else{
 		$loginError = Constants::$registrationFailed;
     	echo "<script type='text/javascript'>alert('$loginError');</script>";

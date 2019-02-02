@@ -33,6 +33,13 @@
 			return $result;
 		}
 
+		public function registerBio($bio, $em){
+
+			$result = mysqli_query($this->con, "UPDATE users SET bio='$bio' WHERE email='$em'");
+
+			return $result;
+		}
+
 		public function getError($error) {
 			if(!in_array($error, $this->errorArray)) {
 				$error = "";
