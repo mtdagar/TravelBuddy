@@ -1,8 +1,6 @@
 <?php
 
-
 ?>
-
 
 <html>
 <head>
@@ -50,13 +48,7 @@
   <div id="mainbanner" class="view">
         <div class="full-bg-img">
           <div class="banner">
-
-
-
             <h1 class="login-disp">Login.</h1>
-
-
-
             <div class="form">
               <form method="POST" action="includes/handlers/login-handler.php" class="login-form">
                 <input class="username form-text-box" type="email" name="loginEmail" label="E-mail" placeholder="E-Mail" >

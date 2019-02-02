@@ -11,21 +11,6 @@
 			$this->errorArray = array();
 		}
 
-		public function login($em, $pw){
-
-			$pw = md5($pw);
-
-			$query = mysqli_query($this->con, "SELECT * FROM users WHERE email='$em' AND password='$pw'");
-
-			if(mysqli_num_rows($query) == 1){
-				return true;
-			}else{
-				array_push($this->errorArray, Constants::$loginFailed);
-				return false;
-			}
-
-		}
-
 		public function register($fn, $ln, $em, $pw) {
 			$this->validateFirstName($fn);
 			$this->validateLastName($ln);

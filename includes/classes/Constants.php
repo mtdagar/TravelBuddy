@@ -1,6 +1,7 @@
 <?php
 class Constants {
 
+	//Register error messages	
 	public static $passwordNotAlphanumeric = "Your password can only contain numbers and letters.";
 	public static $passwordCharacters = "Your password must be between 5 and 30 characters.";
 	public static $emailInvalid = "Email is invalid.";
@@ -11,6 +12,7 @@ class Constants {
 	public static $bioCharacters = "Your bio must be less than 500 characters.";
 	public static $emailTaken = "This email is already associated with an account.";
 
+	//Login error messages
 	public static $loginFailed = "Your email or password is incorrect";
 }
 ?>
