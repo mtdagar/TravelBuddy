@@ -10,5 +10,7 @@ class Constants {
 	public static $endLocationCharacters = "Your destination location must be between 2 and 100 characters.";
 	public static $bioCharacters = "Your bio must be less than 500 characters.";
 	public static $emailTaken = "This email is already associated with an account.";
+
+	public static $loginFailed = "Your email or password is incorrect";
 }
 ?>

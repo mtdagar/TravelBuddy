@@ -1,3 +1,9 @@
+<?php
+
+
+?>
+
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -44,11 +50,17 @@
   <div id="mainbanner" class="view">
         <div class="full-bg-img">
           <div class="banner">
+
+
+
             <h1 class="login-disp">Login.</h1>
+
+
+
             <div class="form">
               <form method="POST" action="includes/handlers/login-handler.php" class="login-form">
-                <input class="username form-text-box" type="email" name="email" label="E-mail" placeholder="E-Mail" >
-                <input class="pass" type="password" label="Password" name="password" placeholder="Password">
+                <input class="username form-text-box" type="email" name="loginEmail" label="E-mail" placeholder="E-Mail" >
+                <input class="pass" type="password" label="Password" name="loginPassword" placeholder="Password">
                 <button name="login">Login</button>
                 <ul class="options">
                   <li><a href="register.php">Don't have an account?</a></li>
