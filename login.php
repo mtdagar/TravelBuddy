@@ -1,4 +1,23 @@
 <?php
+  
+include("includes/config.php");
+include("includes/classes/Constants.php");
+
+if(isset($_POST['login'])){
+  $email=$_POST['loginEmail'];
+  $password=md5($_POST['loginPassword']);
+
+
+  $sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
+  $query=mysqli_query($con, $sql);
+
+  if(mysqli_num_rows($query) == 1){
+    header("Location: main.php");
+  }else{
+    $loginError = Constants::$loginFailed;
+    echo "<script type='text/javascript'>alert('$loginError');</script>";
+  }
+}
 
 ?>
 
@@ -50,7 +69,7 @@
           <div class="banner">
             <h1 class="login-disp">Login.</h1>
             <div class="form">
-              <form method="POST" action="includes/handlers/login-handler.php" class="login-form">
+              <form method="POST" action="login.php" class="login-form">
                 <input class="username form-text-box" type="email" name="loginEmail" label="E-mail" placeholder="E-Mail" >
                 <input class="pass" type="password" label="Password" name="loginPassword" placeholder="Password">
                 <button name="login">Login</button>
