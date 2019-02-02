@@ -4,10 +4,15 @@
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
 
-	$account = new Account($con);
+	if(isset($_SESSION['userLoggedIn'])){
+		$userLoggedIn = $_SESSION['userLoggedIn'];
+	}else{
+		header("Location: login.php");
+	}
 
-	include("includes/handlers/register-handler.php");
-	include("includes/handlers/login-handler.php");
+
+	$account = new Account($con);
+	
 
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {

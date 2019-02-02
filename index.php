@@ -1,3 +1,27 @@
+<?php
+  
+  include("includes/config.php");
+  include("includes/classes/Constants.php");
+
+  if(isset($_SESSION['userLoggedIn'])){
+    //if user logged in
+    $userLoggedIn = $_SESSION['userLoggedIn'];
+    
+  }
+
+
+  function destroySession(){
+    session_destroy();
+  }  
+
+  function getInputValue($name) {
+    if(isset($_POST[$name])) {
+      echo $_POST[$name];
+    }
+  }
+
+?>
+
 <html>
 <head>
 	<title>Welcome to Travel Buddy</title>
@@ -25,18 +49,17 @@
             <span class="navbar-toggler-icon"></span>
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
-            <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-                <a class="nav-link" href="login.php">LOGIN</a>
+            <ul class="navbar-nav ml-auto" id="navList">
+              <li class="nav-item active" id="loginLinkItem">
+                <a class="nav-link" id="loginLink" href="login.php">LOGIN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" id="aboutLink" href="#">ABOUT<span class="sr-only">(current)</span></a>
               </li>
 
             </ul>
           </div>
         </nav>
-
 
   <!-- Banner -->
 	<div id="mainbanner" class="view">
@@ -48,6 +71,14 @@
 
         </div>
     </div>
+
+<?php
+
+  if(isset($_SESSION['userLoggedIn']) && !empty($_SESSION['userLoggedIn'])) {
+    echo "<script src='includes/handlers/nav-links.js' type='text/javascript'></script>";
+  }
+
+?>
 
 </body>
 </html>

@@ -12,6 +12,7 @@ if(isset($_POST['login'])){
   $query=mysqli_query($con, $sql);
 
   if(mysqli_num_rows($query) == 1){
+    $_SESSION['userLoggedIn'] = $email;
     header("Location: main.php");
   }else{
     $loginError = Constants::$loginFailed;

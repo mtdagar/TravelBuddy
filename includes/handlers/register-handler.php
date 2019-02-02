@@ -37,6 +37,7 @@ if(isset($_POST['registerButton'])){
 	$wasSuccessful = $account->register($firstName, $lastName, $email, $password);
 
 	if($wasSuccessful) {
+		$_SESSION['userLoggedIn'] = $email;
 		$message = "wasSuccessful";
 		echo "<script type='text/javascript'>alert('$message');</script>";
 		header("Location: index.php");
