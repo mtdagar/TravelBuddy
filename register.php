@@ -4,10 +4,10 @@
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
 
-	public $account = new Account($con);
+	$account = new Account($con);
 
-	include("includes/handlers/register-handler.php");
 	include("includes/handlers/login-handler.php");
+	include("includes/handlers/register-handler.php");
 
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {

@@ -3,6 +3,7 @@
 	include("includes/config.php");
 	include("includes/classes/Account.php");
 	include("includes/classes/Constants.php");
+	include("includes/handlers/login-handler.php");
 
 	if(isset($_SESSION['userLoggedIn'])){
 		$userLoggedIn = $_SESSION['userLoggedIn'];

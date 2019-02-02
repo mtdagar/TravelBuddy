@@ -38,9 +38,12 @@ if(isset($_POST['registerButton'])){
 
 	if($wasSuccessful) {
 		$_SESSION['userLoggedIn'] = $email;
-		$message = "wasSuccessful";
-		echo "<script type='text/javascript'>alert('$message');</script>";
-		header("Location: index.php");
+		//$message = "wasSuccessful";
+		//echo "<script type='text/javascript'>alert('$message');</script>";
+		header("Location: registerLocation.php");
+	}else{
+		//$loginError = Constants::$registrationFailed;
+    	//echo "<script type='text/javascript'>alert('$loginError');</script>";
 	}
 }
 
