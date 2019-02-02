@@ -7,8 +7,14 @@
 	if(isset($_SESSION['userLoggedIn'])){
 		$userLoggedIn = $_SESSION['userLoggedIn'];
 	}else{
-		header("Location: login.php");
+		$message = Constants::$loginRequired;
+	
+		echo("<script>
+			alert('$message');
+			window.location.href='login.php';
+		</script>");
 	}
+
 
 	$account = new Account($con);
 
@@ -48,12 +54,12 @@
    		    <span class="navbar-toggler-icon"></span>
        	</button>
        	<div class="collapse navbar-collapse" id="navbarNavDropdown">
-      	    <ul class="navbar-nav ml-auto">
-              <li class="nav-item active">
-              	<a class="nav-link" href="login.php">LOGIN</a>
+            <ul class="navbar-nav ml-auto" id="navList">
+              <li class="nav-item active" id="loginLinkItem">
+                <a class="nav-link" id="loginLink" href="login.php">LOGIN</a>
               </li>
               <li class="nav-item">
-                <a class="nav-link" href="#">ABOUT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" id="aboutLink" href="#">ABOUT<span class="sr-only">(current)</span></a>
               </li>
               
             </ul>
@@ -99,6 +105,14 @@
   	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 	
+
+	<?php
+
+	  if(isset($_SESSION['userLoggedIn']) && !empty($_SESSION['userLoggedIn'])) {
+	    echo "<script src='includes/handlers/nav-links.js' type='text/javascript'></script>";
+	  }
+
+	?>
 
 </body>
 
