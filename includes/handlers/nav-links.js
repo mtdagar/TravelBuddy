@@ -12,9 +12,5 @@ logoutLink.setAttribute("id", "logoutLink");
 logoutLink.setAttribute("href", "includes/classes/Logout.php");
 logoutLink.appendChild(document.createTextNode("LOG OUT"));
 
-
 navList.appendChild(logoutLinkItem);
 logoutLinkItem.appendChild(logoutLink);
-
-//var loginLink = document.getElementById("loginLink");
-//loginLink.innerHTML = "LOG OUT";

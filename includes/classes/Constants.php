@@ -13,6 +13,7 @@ class Constants {
 	public static $emailTaken = "This email is already associated with an account.";
 
 	//Login error messages
-	public static $loginFailed = "Your email or password is incorrect";
+	public static $loginRequired = "You must be logged in to visit this page.";
+	public static $loginFailed = "Your email or password is incorrect.";
 }
 ?>

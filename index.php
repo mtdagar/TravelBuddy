@@ -9,11 +9,6 @@
     
   }
 
-
-  function destroySession(){
-    session_destroy();
-  }  
-
   function getInputValue($name) {
     if(isset($_POST[$name])) {
       echo $_POST[$name];
