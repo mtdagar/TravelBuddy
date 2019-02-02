@@ -45,6 +45,10 @@ body{
   border-radius: 10px;
 }
 
+.sidebar-form{
+  margin-top: 130px;
+}
+
 .sidebar-form button{
   margin-left: 40px;
   border-radius: 10px;

@@ -34,10 +34,16 @@
 	<link rel="stylesheet" href="assets/css/map.css">
 </head>
 
+
 <body>
 
+
+	<!-- MAP -->
 	<div id="mapContainer"></div>
 
+
+
+	<!-- Sidebar -->
   	<div class="sidebar">
   		
   		<form class="sidebar-form">
@@ -46,7 +52,8 @@
 		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Submit</button>
 		</form>
 
-		  <div class="sidebtn"></div>
+		<div class="sidebtn"></div>
+
 	</div>
   
 
