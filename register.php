@@ -105,11 +105,7 @@
 			  <button type="submit" name ="registerButton" class="btn btn-primary">Sign up</button>
 
 		</div>
-
-	
-			
-
-			
+		
 	</form>
 
 

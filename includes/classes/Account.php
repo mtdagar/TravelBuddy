@@ -24,7 +24,13 @@
 			else {
 				return false;
 			}
+		}
 
+		public function registerLocation($sl, $el, $em){
+
+			$result = mysqli_query($this->con, "UPDATE users SET startLocation='$sl', endLocation='$el' WHERE email='$em'");
+
+			return $result;
 		}
 
 		public function getError($error) {

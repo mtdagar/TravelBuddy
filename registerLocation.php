@@ -5,6 +5,7 @@
 	include("includes/classes/Constants.php");
 	include("includes/handlers/login-handler.php");
 
+
 	if(isset($_SESSION['userLoggedIn'])){
 		$userLoggedIn = $_SESSION['userLoggedIn'];
 	}else{
@@ -18,7 +19,9 @@
 
 
 	$account = new Account($con);
+	$userLoggedIn = $_SESSION['userLoggedIn'];
 
+	include("includes/handlers/register-handler.php");
 
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {
@@ -86,10 +89,10 @@
 			<h2>How do you commute?</h2>
 
 			  <div class="form-group" style="padding-top: 20px; padding-bottom: 20px">
-			    <input type="text" class="form-control margin-bottom" id="startLocation" placeholder="Starting point" value="<?php getInputValue('startLocation') ?>">
+			    <input name="startLocation" type="text" class="form-control margin-bottom" placeholder="Starting point" value="<?php getInputValue('startLocation') ?>">
 			  </div>
 			  <div class="form-group" style="padding-bottom: 20px">
-			    <input type="text" class="form-control margin-bottom" id="endLocation" placeholder="Destination" value="<?php getInputValue('endLocation') ?>">
+			    <input name="endLocation" type="text" class="form-control margin-bottom" placeholder="Destination" value="<?php getInputValue('endLocation') ?>">
 			  </div>
 
 			  <p>
@@ -99,7 +102,7 @@
 			  	</ul>
 			  </p>
 
-			  <button type="submit" name ="registerLocationButton" class="btn btn-primary">Set Commute</button>
+			  <button type="submit" name ="registerLocationBtn" class="btn btn-primary">Set Commute</button>
 		</div>
 			  			
 	</form>

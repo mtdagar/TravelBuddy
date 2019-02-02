@@ -6,7 +6,6 @@
   if(isset($_SESSION['userLoggedIn'])){
     //if user logged in
     $userLoggedIn = $_SESSION['userLoggedIn'];
-    
   }
 
   function getInputValue($name) {
