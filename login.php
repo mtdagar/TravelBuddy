@@ -70,8 +70,8 @@ if(isset($_POST['login'])){
             <h1 class="login-disp">Login.</h1>
             <div class="form">
               <form method="POST" action="login.php" class="login-form">
-                <input class="username form-text-box" type="email" name="loginEmail" label="E-mail" placeholder="E-Mail" >
-                <input class="pass" type="password" label="Password" name="loginPassword" placeholder="Password">
+                <input class="username form-text-box" type="email" name="loginEmail" label="E-mail" placeholder="E-Mail" required>
+                <input class="pass" type="password" label="Password" name="loginPassword" placeholder="Password" required>
                 <button name="login">Login</button>
                 <ul class="options">
                   <li><a href="register.php">Don't have an account?</a></li>
