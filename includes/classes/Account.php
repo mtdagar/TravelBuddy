@@ -16,10 +16,8 @@
 			$this->validateEmail($em);
 			$this->validatePassword($pw);
 
-			if(empty($this->errorArray)==true) {
+			if(empty($this->errorArray)) {
 				//Insert into db
-				$message = "insertUserDetails";
-				echo "<script type='text/javascript'>alert('$message');</script>";
 				return $this->insertUserDetails($fn, $ln, $em, $pw);
 			}
 			else {
@@ -39,7 +37,7 @@
 			$encryptedPw = md5($pw);
 			$date = date("Y-m-d");
 
-			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', NULL, NULL, NULL )");
+			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', '', '', '')");
 
 			return $result;
 		}
