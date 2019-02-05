@@ -35,6 +35,9 @@
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
 
+  <!-- EJS 
+  <script src="includes/scripts/ejs.min.js"></script>
+  -->
 
 	<!-- Navigation Bar -->
         <nav class="navbar navbar-expand-lg transparent navbar-dark fixed-top">
@@ -44,16 +47,36 @@
           </button>
           <div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto" id="navList">
-              <li class="nav-item active" id="loginLinkItem">
-                <a class="nav-link" id="loginLink" href="login.php">LOGIN</a>
-              </li>
+
+              <?php if(isset($_SESSION['userLoggedIn']) && !empty($_SESSION['userLoggedIn'])) : ?> 
+
+                <li class="nav-item dropdown">
+                  <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                    user
+                  </a>
+                  <div class="dropdown-menu" aria-labelledby="navbarDropdown">
+                    <a class="dropdown-item" href="#">Your profile</a>
+                    <div class="dropdown-divider"></div>
+                    <a class="dropdown-item" href="includes/classes/Logout.php">Sign out</a>
+                  </div>
+                </li> 
+
+              <?php else : ?>  
+
+                <li class="nav-item" id="loginLinkItem">
+                  <a class="nav-link" id="loginLink" href="login.php">Login</a>
+                </li>
+
+              <?php endif; ?>
+
               <li class="nav-item">
-                <a class="nav-link" id="aboutLink" href="#">ABOUT<span class="sr-only">(current)</span></a>
+                <a class="nav-link" id="aboutLink" href="#">About<span class="sr-only">(current)</span></a>
               </li>
 
             </ul>
           </div>
         </nav>
+
 
   <!-- Banner -->
 	<div id="mainbanner" class="view">
@@ -66,13 +89,7 @@
         </div>
     </div>
 
-<?php
 
-  if(isset($_SESSION['userLoggedIn']) && !empty($_SESSION['userLoggedIn'])) {
-    echo "<script src='includes/handlers/nav-links.js' type='text/javascript'></script>";
-  }
-
-?>
 
 </body>
 </html>

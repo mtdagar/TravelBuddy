@@ -48,6 +48,14 @@ header,
   width: auto;
 }
 
+#navbarDropdown{
+	background-image: url('../icons/user_white_32px.png');
+	background-repeat: no-repeat;
+	background-position: 0px 8px;
+	padding-left: 40px;
+	display: block;
+}
+
 .display-2{
 	color: #FFFFFF;
 	font-family: Poppins;
