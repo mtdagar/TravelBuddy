@@ -11,6 +11,13 @@
 			$this->errorArray = array();
 		}
 
+		public function getFirstName($em){
+			$sql = "SELECT firstName FROM users WHERE email='$em' limit 1";
+			$result = mysqli_query($con, $sql);
+			$value = mysqli_fetch_object($result);
+			return $value->firstName;
+		}
+
 		public function register($fn, $ln, $em, $pw) {
 			$this->validateFirstName($fn);
 			$this->validateLastName($ln);

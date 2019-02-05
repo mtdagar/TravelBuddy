@@ -28,6 +28,13 @@
 		}
 	}
 
+	function getFirstName($em){
+	    $sql = "SELECT firstName FROM users WHERE email='$em' limit 1";
+	    $result = mysqli_query($GLOBALS['con'], $sql);
+	    $value = mysqli_fetch_object($result);
+	    return $value->firstName;
+	}
+
 ?>
 
 <html>
@@ -68,7 +75,7 @@
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    user
+                    <?php echo getFirstName($_SESSION['userLoggedIn']) ?>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Your profile</a>

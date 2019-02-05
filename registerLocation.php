@@ -29,6 +29,13 @@
 		}
 	}
 
+	function getFirstName($em){
+	    $sql = "SELECT firstName FROM users WHERE email='$em' limit 1";
+	    $result = mysqli_query($GLOBALS['con'], $sql);
+	    $value = mysqli_fetch_object($result);
+	    return $value->firstName;
+	}
+
 ?>
 
 <html>
@@ -55,7 +62,7 @@
 	<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.3/umd/popper.min.js" integrity="sha384-ZMP7rVo3mIykV+2+9J3UJ46jBk0WLaUAdn689aCwoqbBJiSnjAK/l8WvCWPIPm49" crossorigin="anonymous"></script>
 	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
-	
+
 	<!-- Navigation Bar -->
     <nav class="navbar navbar-expand-lg transparent navbar-dark fixed-top">
        	<a class="navbar-brand" href="index.php"><img src="assets/icons/logo.png" alt="travelBuddy"></a>
@@ -69,7 +76,7 @@
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    user
+                    <?php echo getFirstName($_SESSION['userLoggedIn']) ?>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Your profile</a>
