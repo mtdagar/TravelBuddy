@@ -1,4 +1,32 @@
+<?php
+  
+  	include("includes/config.php");
+  	include("includes/classes/Constants.php");
+
+  	if(isset($_SESSION['userLoggedIn'])){
+    //if user logged in
+    $userLoggedIn = $_SESSION['userLoggedIn'];
+  	}else{
+		$message = Constants::$loginRequired;
+	
+		echo("<script>
+			alert('$message');
+			window.location.href='login.php';
+		</script>");
+  	}
+
+  	function getFirstName($em){
+    	$sql = "SELECT firstName FROM users WHERE email='$em' limit 1";
+    	$result = mysqli_query($GLOBALS['con'], $sql);
+    	$value = mysqli_fetch_object($result);
+    	return $value->firstName;
+  	}
+
+
+?>
+
 <!DOCTYPE html>
+
 <html lang="en" >
 
 <html>
