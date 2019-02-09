@@ -94,12 +94,12 @@
   	<div class="sidebar">
   		
   		<form class="sidebar-form">
-		    <input type="email" class="form-control" id="startLocation" placeholder="Starting point" 
+		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point" 
 		    	<?php if(getStartLocation($_SESSION['userLoggedIn'])!=null) : ?>
 		     		value="<?php echo getStartLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
 
-		    <input type="email" class="form-control" id="endLocation" placeholder="Destination"
+		    <input type="text" class="form-control" id="endLocation" placeholder="Destination"
 		    	<?php if(getEndLocation($_SESSION['userLoggedIn'])!=null) : ?>
 		     		value="<?php echo getEndLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
