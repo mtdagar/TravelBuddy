@@ -22,6 +22,25 @@
     	return $value->firstName;
   	}
 
+  	function getStartLocation($em){
+  		$sql = "SELECT startLocation FROM users WHERE email='$em' limit 1";
+    	$result = mysqli_query($GLOBALS['con'], $sql);
+    	$value = mysqli_fetch_object($result);
+    	if($value->startLocation==""){
+    		return null;
+    	}else{
+    		return $value->startLocation;
+    	}
+    	
+  	}
+
+  	function getEndLocation($em){
+  		$sql = "SELECT endLocation FROM users WHERE email='$em' limit 1";
+    	$result = mysqli_query($GLOBALS['con'], $sql);
+    	$value = mysqli_fetch_object($result);
+    	return $value->endLocation;
+  	}
+
 
 ?>
 
@@ -75,8 +94,16 @@
   	<div class="sidebar">
   		
   		<form class="sidebar-form">
-		    <input type="email" class="form-control" id="startLocation" placeholder="Starting point">
-		    <input type="email" class="form-control" id="endLocation" placeholder="Destination">
+		    <input type="email" class="form-control" id="startLocation" placeholder="Starting point" 
+		    	<?php if(getStartLocation($_SESSION['userLoggedIn'])!=null) : ?>
+		     		value="<?php echo getStartLocation($_SESSION['userLoggedIn']) ?>"
+		     	<?php endif; ?>>
+
+		    <input type="email" class="form-control" id="endLocation" placeholder="Destination"
+		    	<?php if(getEndLocation($_SESSION['userLoggedIn'])!=null) : ?>
+		     		value="<?php echo getEndLocation($_SESSION['userLoggedIn']) ?>"
+		     	<?php endif; ?>>
+
 		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Submit</button>
 		</form>
 
