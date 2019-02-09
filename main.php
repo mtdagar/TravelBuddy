@@ -93,6 +93,14 @@
 	<!-- Sidebar -->
   	<div class="sidebar">
   		
+  		<div class="user-controls">
+
+  			<a href="#" class="control-icon" id="chatIcon"><span>Chat</span></a>
+  			<a href="#" class="control-icon" id="buddiesIcon"><span>Buddies</span></a>
+  			<a href="#" class="control-icon" id="bellIcon"><span>Notifications</span></a>
+
+  		</div>
+
   		<form class="sidebar-form">
 		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point" 
 		    	<?php if(getStartLocation($_SESSION['userLoggedIn'])!=null) : ?>
