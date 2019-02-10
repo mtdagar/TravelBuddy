@@ -76,8 +76,18 @@
           </div>
         </nav>
 
+  <section class="mainbanner">
+    <div class="background-image" style="background-image: url(assets/images/stockimg.png);"></div>
+    <div class="main-content-area">
+      <h1>Fall in love with<br> your commute.</h1>
+      <a href="register.php" class="transparent-btn">SIGN UP NOW</a>
+    </div>
+  </section>
 
-  <!-- Banner -->
+
+
+
+  <!-- Banner
 	<div id="mainbanner" class="view">
         <div class="full-bg-img">
         	<div class="banner">
@@ -87,7 +97,7 @@
 
         </div>
     </div>
-
+  -->
 
 
 </body>
