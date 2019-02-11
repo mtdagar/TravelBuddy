@@ -1,3 +1,8 @@
+//globals
+var submitBtn = document.getElementById('setLocationBtn');
+
+
+
 function initMap() {
 	var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -11,15 +16,16 @@ function initMap() {
         });
 
     directionsDisplay.setMap(map);
-    calculateAndDisplayRoute(directionsService, directionsDisplay);
-    // The marker, positioned at Uluru
-    var marker = new google.maps.Marker({position: uluru, map: map});
+
+	$("#setLocationBtn").on('click', function(){
+		calculateAndDisplayRoute(directionsService, directionsDisplay);
+	});
 }
 
 function calculateAndDisplayRoute(directionsService, directionsDisplay) {
     directionsService.route({
-        origin: 'Rohini, New Delhi, Delhi, India',
-        destination: 'Gurugram, Delhi',
+        origin: document.getElementById('startLocation').value,
+        destination: document.getElementById('endLocation').value,
         travelMode: 'DRIVING'
         }, function(response, status) {
           if (status === 'OK') {
@@ -29,6 +35,10 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           }
         }
     );
+}
+
+function my(){
+	console.log("hi");
 }
 
 //function calls

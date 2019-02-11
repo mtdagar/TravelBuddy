@@ -100,7 +100,7 @@
 		     		value="<?php echo getEndLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
 
-		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Submit</button>
+		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Find Buddies</button>
 		</form>
 
 		<div class="sidebtn"></div>
