@@ -1,3 +1,27 @@
+<?php
+  
+include("includes/config.php");
+include("includes/classes/Constants.php");
+
+if(isset($_POST['login'])){
+  $email=$_POST['loginEmail'];
+  $password=md5($_POST['loginPassword']);
+
+
+  $sql="SELECT * FROM users WHERE email='$email' AND password='$password'";
+  $query=mysqli_query($con, $sql);
+
+  if(mysqli_num_rows($query) == 1){
+    $_SESSION['userLoggedIn'] = $email;
+    header("Location: main.php");
+  }else{
+    $loginError = Constants::$loginFailed;
+    echo "<script type='text/javascript'>alert('$loginError');</script>";
+  }
+}
+
+?>
+
 <html>
 <head>
   <meta charset="UTF-8">
@@ -46,10 +70,10 @@
           <div class="banner">
             <h1 class="login-disp">Login.</h1>
             <div class="form">
-              <form action="" class="login-form">
-                <input class="username form-text-box" type="email" label="E-mail" placeholder="E-Mail" >
-                <input class="pass" type="password" label="Password" placeholder="Password">
-                <button>Login</button>
+              <form method="POST" action="login.php" class="login-form">
+                <input class="username form-text-box" type="email" name="loginEmail" label="E-mail" placeholder="E-Mail" required>
+                <input class="pass" type="password" label="Password" name="loginPassword" placeholder="Password" required>
+                <button name="login">Login</button>
                 <ul class="options">
                   <li><a href="register.php">Don't have an account?</a></li>
                   <li><a href="">Forgot Password?</a>

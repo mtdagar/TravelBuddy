@@ -3,11 +3,19 @@
 	class Account {
 
 		private $con;
-		private $errorArray;
+		
+		public static $errorArray;
 
 		public function __construct($con) {
 			$this->con = $con;
 			$this->errorArray = array();
+		}
+
+		public function getFirstName($em){
+			$sql = "SELECT firstName FROM users WHERE email='$em' limit 1";
+			$result = mysqli_query($con, $sql);
+			$value = mysqli_fetch_object($result);
+			return $value->firstName;
 		}
 
 		public function register($fn, $ln, $em, $pw) {
@@ -16,16 +24,27 @@
 			$this->validateEmail($em);
 			$this->validatePassword($pw);
 
-			if(empty($this->errorArray)==true) {
+			if(empty($this->errorArray)) {
 				//Insert into db
-				$message = "insertUserDetails";
-				echo "<script type='text/javascript'>alert('$message');</script>";
 				return $this->insertUserDetails($fn, $ln, $em, $pw);
 			}
 			else {
 				return false;
 			}
+		}
 
+		public function registerLocation($sl, $el, $em){
+
+			$result = mysqli_query($this->con, "UPDATE users SET startLocation='$sl', endLocation='$el' WHERE email='$em'");
+
+			return $result;
+		}
+
+		public function registerBio($bio, $em){
+
+			$result = mysqli_query($this->con, "UPDATE users SET bio='$bio' WHERE email='$em'");
+
+			return $result;
 		}
 
 		public function getError($error) {
@@ -39,7 +58,7 @@
 			$encryptedPw = md5($pw);
 			$date = date("Y-m-d");
 
-			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', NULL, NULL, NULL )");
+			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', '', '', '')");
 
 			return $result;
 		}
