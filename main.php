@@ -90,7 +90,7 @@
   		</div>
 
   		<form class="sidebar-form">
-		    <input type="text" class="form-control" id="autocomplete" placeholder="Starting point" 
+		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point" 
 		    	<?php if(getStartLocation($_SESSION['userLoggedIn'])!=null) : ?>
 		     		value="<?php echo getStartLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
