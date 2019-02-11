@@ -49,7 +49,10 @@
 	
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-	
+
+	<!-- Google Maps API -->
+  	<script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARMwFdkCA_ALFvh9aFuJfixwCoinGoXbQ&libraries=places"></script>
+
 	<!-- Custom Stylesheet -->
 	<link href="assets/css/register.css" rel="stylesheet">
 
@@ -120,10 +123,10 @@
 			<h2>How do you commute?</h2>
 
 			  <div class="form-group" style="padding-top: 20px; padding-bottom: 20px">
-			    <input name="startLocation" type="text" class="form-control margin-bottom" placeholder="Starting point" value="<?php getInputValue('startLocation') ?>">
+			    <input name="startLocation" id="startLocation" type="text" class="form-control margin-bottom" placeholder="Starting point" value="<?php getInputValue('startLocation') ?>">
 			  </div>
 			  <div class="form-group" style="padding-bottom: 20px">
-			    <input name="endLocation" type="text" class="form-control margin-bottom" placeholder="Destination" value="<?php getInputValue('endLocation') ?>">
+			    <input name="endLocation" id="endLocation" type="text" class="form-control margin-bottom" placeholder="Destination" value="<?php getInputValue('endLocation') ?>">
 			  </div>
 
 			  <p>
@@ -137,6 +140,9 @@
 		</div>
 			  			
 	</form>
+
+	<!-- Custom JS for Main Page -->
+  	<script type="text/javascript" src="includes/handlers/register-location.js"></script>
 
 </body>
 
