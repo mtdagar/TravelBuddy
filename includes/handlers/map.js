@@ -7,6 +7,10 @@ function initMap() {
 	var directionsService = new google.maps.DirectionsService;
     var directionsDisplay = new google.maps.DirectionsRenderer;
 
+    //var directionsResult = new google.maps.DirectionsRoute;
+
+    //var arr = directionsRoute.overview_path();
+
     // The map, centered at Uluru
     var map = new google.maps.Map(document.getElementById('map'), {
           zoom: 5,
@@ -27,13 +31,22 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
         travelMode: 'DRIVING'
         }, function(response, status) {
           if (status === 'OK') {
+          	//set Route
             directionsDisplay.setDirections(response);
+
+            //Prints an array of JSON like objects for coordinates
+            var routeCoordinates = response.routes[0].overview_path;
+            console.log(routeCoordinates);
+
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         }
     );
+
+
 }
+
 
 function my(){
 	console.log("hi");
