@@ -5,7 +5,7 @@
 
   if(isset($_SESSION['userLoggedIn'])){
     //if user logged in
-    $userLoggedIn = $_SESSION['userLoggedIn'];
+    $GLOBALS['userLoggedIn'] = $_SESSION['userLoggedIn'];
   }
 
   function getFirstName($em){
@@ -51,7 +51,7 @@
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-                    <?php echo getFirstName($_SESSION['userLoggedIn']) ?>
+                    <?php echo getFirstName($GLOBALS['userLoggedIn']) ?>
                   </a>
                   <div class="dropdown-menu" aria-labelledby="navbarDropdown">
                     <a class="dropdown-item" href="#">Your profile</a>
