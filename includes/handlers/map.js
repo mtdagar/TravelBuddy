@@ -1,11 +1,11 @@
 //globals
 var submitBtn = document.getElementById('setLocationBtn');
 
-
+//console.log("color: " + userdata);
 
 function initMap() {
-	var directionsService = new google.maps.DirectionsService;
-    var directionsDisplay = new google.maps.DirectionsRenderer;
+		var directionsService = new google.maps.DirectionsService;
+  	var directionsDisplay = new google.maps.DirectionsRenderer;
 
     //var directionsResult = new google.maps.DirectionsRoute;
 
@@ -32,15 +32,26 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
           	//set Route
             directionsDisplay.setDirections(response);
 
-            //Prints an array of JSON like objects for coordinates
+            //JSON like objects containing coordinates
             var routeCoordinates = response.routes[0].overview_path;
-            console.log(routeCoordinates);
+						coordinates = [];
+
+						//push lats and longs from route to a simple 2d array
+						routeCoordinates.forEach(function(val){
+							coordinates.unshift([val.lat(), val.lng()]);
+						});
+
+						console.log(coordinates[0][0]);
 
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         }
     );
+}
+
+function compareRoutes(){
+
 }
 
 

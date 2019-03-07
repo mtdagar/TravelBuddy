@@ -1,5 +1,5 @@
 <?php
-  
+
   	include("includes/config.php");
   	include("includes/classes/Constants.php");
 
@@ -8,7 +8,7 @@
     $userLoggedIn = $_SESSION['userLoggedIn'];
   	}else{
 		$message = Constants::$loginRequired;
-	
+
 		echo("<script>
 			alert('$message');
 			window.location.href='login.php';
@@ -31,7 +31,7 @@
     	}else{
     		return $value->startLocation;
     	}
-    	
+
   	}
 
   	function getEndLocation($em){
@@ -40,8 +40,7 @@
     	$value = mysqli_fetch_object($result);
     	return $value->endLocation;
   	}
-
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -58,7 +57,7 @@
 
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	
+
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
@@ -80,7 +79,7 @@
 
 	<!-- Sidebar -->
   	<div class="sidebar">
-  		
+
   		<div class="user-controls">
 
   			<a href="#" class="control-icon" id="chatIcon"><span>Chat</span></a>
@@ -90,7 +89,7 @@
   		</div>
 
   		<form class="sidebar-form">
-		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point" 
+		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point"
 		    	<?php if(getStartLocation($_SESSION['userLoggedIn'])!=null) : ?>
 		     		value="<?php echo getStartLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
@@ -106,15 +105,15 @@
 		<div class="sidebtn"></div>
 
 	</div>
-  
+
   <!-- jquery CDN -->
   <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
-  
+
   <!-- Custom JS for Main Page -->
   <script type="text/javascript" src="includes/handlers/main-page.js"></script>
 
   <!-- Custom JS for Maps -->
   <script type="text/javascript" src="includes/handlers/map.js"></script>
-  
+
 </body>
 </html>

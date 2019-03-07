@@ -8,14 +8,14 @@ function sanitizeText($inputText){
 
 if(isset($_POST['registerButton'])){
 	//Register button pressed
-	
+
 	//first name
 	$firstName = sanitizeText($_POST['firstName']);
 	$firstName = ucfirst(strtolower($firstName));
 
 	//last name
 	$lastName = sanitizeText($_POST['lastName']);
-	$lastName = ucfirst(strtolower($lastName));	
+	$lastName = ucfirst(strtolower($lastName));
 
 	//email
 	$email = sanitizeText($_POST['email']);
@@ -31,7 +31,7 @@ if(isset($_POST['registerButton'])){
 	$endLocation = sanitizeText($_POST['endLocation']);
 
 	//endLocation
-	$bio = sanitizeText($_POST['bio']);	
+	$bio = sanitizeText($_POST['bio']);
 */
 
 	$wasSuccessful = $account->register($firstName, $lastName, $email, $password);

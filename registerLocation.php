@@ -5,12 +5,13 @@
 	include("includes/classes/Constants.php");
 	include("includes/handlers/login-handler.php");
 
+	$GLOBALS['coordinates'] = [];
 
 	if(isset($_SESSION['userLoggedIn'])){
 		$userLoggedIn = $_SESSION['userLoggedIn'];
 	}else{
 		$message = Constants::$loginRequired;
-	
+
 		echo("<script>
 			alert('$message');
 			window.location.href='login.php';
@@ -35,18 +36,58 @@
 	    $value = mysqli_fetch_object($result);
 	    return $value->firstName;
 	}
-
 ?>
+
+
+<script>
+	function calculateAndDisplayRoute() {
+
+		var directionsService = new google.maps.DirectionsService;
+		var directionsDisplay = new google.maps.DirectionsRenderer;
+
+		console.log('running service');
+
+		directionsService.route({
+
+				origin: document.getElementById('startLocation').value,
+				destination: document.getElementById('endLocation').value,
+				travelMode: 'DRIVING'
+				}, function(response, status) {
+					if (status === 'OK') {
+						//set Route
+						directionsDisplay.setDirections(response);
+
+						//JSON like objects containing coordinates
+						var routeCoordinates = response.routes[0].overview_path;
+						coordinates = [];
+
+						//push lats and longs from route to a simple 2d array
+						routeCoordinates.forEach(function(val){
+							coordinates.unshift([val.lat(), val.lng()]);
+						});
+
+						<?php
+							$GLOBALS['coordinates'] = coordinates;
+						 ?>
+						console.log(coordinates[0][0]);
+
+					} else {
+						window.alert('Directions request failed due to ' + status);
+					}
+				}
+		);
+	}
+</script>
 
 <html>
 
 <head>
-	
+
 	<title>Welcome to Travel Buddy</title>
-	
+
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	
+
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
@@ -74,8 +115,8 @@
        	</button>
        	<div class="collapse navbar-collapse" id="navbarNavDropdown">
             <ul class="navbar-nav ml-auto" id="navList">
-              
-              <?php if(isset($_SESSION['userLoggedIn']) && !empty($_SESSION['userLoggedIn'])) : ?> 
+
+              <?php if(isset($_SESSION['userLoggedIn']) && !empty($_SESSION['userLoggedIn'])) : ?>
 
                 <li class="nav-item dropdown">
                   <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -86,9 +127,9 @@
                     <div class="dropdown-divider"></div>
                     <a class="dropdown-item" href="includes/classes/Logout.php">Sign out</a>
                   </div>
-                </li> 
+                </li>
 
-              <?php else : ?>  
+              <?php else : ?>
 
                 <li class="nav-item" id="loginLinkItem">
                   <a class="nav-link" id="loginLink" href="login.php">Login</a>
@@ -98,7 +139,7 @@
 
               <li class="nav-item">
                 <a class="nav-link" id="aboutLink" href="#">About<span class="sr-only">(current)</span></a>
-              </li>   
+              </li>
 
             </ul>
        	</div>
@@ -136,9 +177,9 @@
 			  	</ul>
 			  </p>
 
-			  <button type="submit" name ="registerLocationBtn" class="btn btn-primary">Set Commute</button>
+			  <button type="button" name ="registerLocationBtn" class="btn btn-primary" onclick="calculateAndDisplayRoute()">Set Commute</button>
 		</div>
-			  			
+
 	</form>
 
 	<!-- Custom JS for Main Page -->
