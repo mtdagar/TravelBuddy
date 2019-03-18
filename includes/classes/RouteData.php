@@ -1,20 +1,22 @@
 <?php
 
   	include("../config.php");
-  	include("Constants.php");
+    include("Constants.php");
 
 
-	function fetchUserData(){
-	    $sql = "SELECT email, startLocation, endLocation FROM users";
-	    $result = mysqli_query($GLOBALS['con'], $sql);
-	    $value = mysqli_fetch_all($result);
+    function fetchUserData(){
+	     $sql = "SELECT email, startLocation, endLocation FROM users";
+	     $result = mysqli_query($GLOBALS['con'], $sql);
+	     $value = mysqli_fetch_all($result);
+
+		   return json_encode($value[0]);
+     }
 
 
-		return json_encode($value[0]);
-	}
+     $userRoute;
+     $userdata = fetchUserData();
 
 
-	$userdata = fetchUserData();
 
 ?>
 
@@ -51,13 +53,23 @@
 							coordinates.unshift([val.lat(), val.lng()]);
 						});
 
-						console.log(coordinates);
+						//console.log(coordinates);
+
+            post(coordinates);
 
           } else {
             window.alert('Directions request failed due to ' + status);
           }
         }
     );
+  }
+
+  function post(coordinates){
+    //var encodedString = JSON.stringify(coordinates);
+    $.post('PostData.php', {array:coordinates},
+    function(data){
+      console.log(data);
+    });
   }
 
   calculateRoute(directionsService);
