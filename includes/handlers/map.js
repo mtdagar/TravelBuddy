@@ -43,6 +43,8 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 
 						console.log(coordinates[0][0]);
 
+						getRoutes(coordinates);
+
           } else {
             window.alert('Directions request failed due to ' + status);
           }

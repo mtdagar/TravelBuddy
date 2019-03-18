@@ -13,7 +13,10 @@
 			alert('$message');
 			window.location.href='login.php';
 		</script>");
+    die();
   	}
+
+    include("includes/handlers/getRoutes-handler.php");
 
   	function getFirstName($em){
     	$sql = "SELECT firstName FROM users WHERE email='$em' limit 1";
@@ -40,7 +43,7 @@
     	$value = mysqli_fetch_object($result);
     	return $value->endLocation;
   	}
-    
+
 ?>
 
 <!DOCTYPE html>

@@ -3,7 +3,7 @@
 	class Account {
 
 		private $con;
-		
+
 		public $errorArray;
 
 		public function __construct($con) {
@@ -33,9 +33,10 @@
 			}
 		}
 
-		public function registerLocation($sl, $el, $em){
+		public function registerLocation($sl, $el, $route, $em){
+			$route = json_encode($route);
 
-			$result = mysqli_query($this->con, "UPDATE users SET startLocation='$sl', endLocation='$el' WHERE email='$em'");
+			$result = mysqli_query($this->con, "UPDATE users SET startLocation='$sl', endLocation='$el', route='$route' WHERE email='$em'");
 
 			return $result;
 		}
@@ -58,9 +59,21 @@
 			$encryptedPw = md5($pw);
 			$date = date("Y-m-d");
 
-			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', '', '', '')");
+			$result = mysqli_query($this->con, "INSERT INTO users VALUES (NULL, '$fn', '$ln', '$em', '$encryptedPw', '$date', '', '', '', '')");
 
 			return $result;
+		}
+
+		public function getRoutes($em){
+
+			$sql = "SELECT email, route, startLocation, endLocation FROM users WHERE email != '$em'";
+
+			$query = mysqli_query($this->con, $sql);
+
+			$rows = mysqli_fetch_all($query);
+
+			return $rows;
+
 		}
 
 

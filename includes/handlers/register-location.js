@@ -17,6 +17,8 @@ function initAutocomplete() {
 
 
 function calculateAndDisplayRoute(){
+  var origin = document.getElementById('startLocation').value,
+  destination = document.getElementById('endLocation').value;
   directionsService.route({
       origin: document.getElementById('startLocation').value,
       destination: document.getElementById('endLocation').value,
@@ -35,11 +37,30 @@ function calculateAndDisplayRoute(){
 
           console.log(coordinates[0][0]);
 
+          post(coordinates, origin, destination);
+
         } else {
           window.alert('Directions request failed due to ' + status);
         }
       }
   );
+}
+
+function post(coordinates, origin, destination) {
+
+  $.post("", {
+    endloc : destination,
+    sloc : origin,
+    routes  : coordinates,
+    storeRoute : 1,
+  }, function (response) {
+    if(response == 'true' || response == '1') {
+      alert("Saved your route to db");
+    }
+    else {
+      alert("Some error occureed");
+    }
+  });
 }
 
 //function calls

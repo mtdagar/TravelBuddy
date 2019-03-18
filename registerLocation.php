@@ -23,6 +23,7 @@
 	$userLoggedIn = $_SESSION['userLoggedIn'];
 
 	include("includes/handlers/register-handler.php");
+	include("includes/handlers/commute-handler.php");
 
 	function getInputValue($name) {
 		if(isset($_POST[$name])) {
@@ -40,7 +41,7 @@
 
 
 <script>
-	function calculateAndDisplayRoute() {
+	/*function calculateAndDisplayRoute() {
 
 		var directionsService = new google.maps.DirectionsService;
 		var directionsDisplay = new google.maps.DirectionsRenderer;
@@ -67,7 +68,7 @@
 						});
 
 						<?php
-							$GLOBALS['coordinates'] = coordinates;
+							// $GLOBALS['coordinates'] = coordinates;
 						 ?>
 						console.log(coordinates[0][0]);
 
@@ -76,7 +77,7 @@
 					}
 				}
 		);
-	}
+	}*/
 </script>
 
 <html>
@@ -184,6 +185,10 @@
 
 	<!-- Custom JS for Main Page -->
   	<script type="text/javascript" src="includes/handlers/register-location.js"></script>
+
+		<!-- jQuery -->
+	  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 
 </body>
 
