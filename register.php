@@ -20,15 +20,15 @@
 <html>
 
 <head>
-	
+
 	<title>Welcome to Travel Buddy</title>
-	
+
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	
+
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
-	
+
 	<!-- Custom Stylesheet -->
 	<link href="assets/css/register.css" rel="stylesheet">
 
@@ -51,7 +51,7 @@
               <li class="nav-item">
                 <a class="nav-link" id="aboutLink" href="#">ABOUT<span class="sr-only">(current)</span></a>
               </li>
-              
+
             </ul>
        	</div>
     </nav>
@@ -106,21 +106,18 @@
 
 		</div>
 
-	
-			
-		
+
+
+
 	</form>
 
 
 
 
 	<!-- jQuery -->
-  	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
 	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 	
-	
- 	<!-- Custom js for registeration pages -->
-	<script type="text/javascript" src="includes/handlers/multistep-registration-form.js"></script>
 
 </body>
 

@@ -1,5 +1,5 @@
 <?php
     $routeCoordinates = $_POST['array'];
-    $encodedString = serialize($routeCoordinates);
-    echo $encodedString;
+    $encodedString =json_encode($routeCoordinates);
+    echo ($encodedString);
  ?>
