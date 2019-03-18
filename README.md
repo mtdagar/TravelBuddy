@@ -8,7 +8,7 @@ Never travel alone.
 
 ## About
 
-A collaborative project in development by Meet Dagar, Dikshant Rawat, Purusharth Dang and Aditya Mehta.
+A collaborative project in development by Meet Dagar, Dikshant Rawat and Aditya Mehta.
 
 ## Technologies used
 
