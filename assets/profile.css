@@ -1,0 +1,84 @@
+@import url('https://fonts.googleapis.com/css?family=Poppins:100,400');
+
+button:active { outline: none }
+
+body  {
+  margin: 0;
+  padding: 0;
+  background-color: #f7f7f7;
+}
+
+#displayImage img  {
+  border-radius: 50%;
+  width: 150px;
+}
+
+.info  {
+  margin-top: 10vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+
+.name h1 {
+  font-family: 'Poppins', Helvetica, sans-serif;
+  font-size: 30px;
+  font-weight: 400;
+}
+
+.buttons  {
+  display: flex;
+  flex-direction: column-reverse;
+  align-items: center;
+}
+
+button {
+    margin-bottom: 10px;
+    background-color: #eaeaea;
+    border:none;
+    border-radius: 5px;
+    color: black;
+    padding: 5px 20px 5px 20px;
+    font-family: 'Poppins', Helvetica, sans-serif;
+    font-weight: 400;
+    cursor: pointer;
+    transition-duration: 0.3s;
+}
+
+.friend button{
+  background: #5C6BC0;
+  color: white;
+  border: none;
+}
+
+button:hover {
+  transform: scale(1.05);
+}
+
+.posts {
+  margin-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+
+}
+
+.image img{
+  height: 300px;
+  margin-top: 10px;
+  margin-left: 5px;
+  margin-right: 5px;
+  cursor: pointer;
+  transition-duration: 0.3s;
+  flex: 1 0 calc(33.333% - 20px);
+}
+.image img:hover {
+  transform: scale(1.02);
+}
+
+@media (max-width: 640px) {
+  .image img {
+    height: 100px;
+  }
+}
