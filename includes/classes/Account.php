@@ -4,7 +4,7 @@
 
 		private $con;
 		
-		public static $errorArray;
+		public $errorArray;
 
 		public function __construct($con) {
 			$this->con = $con;
