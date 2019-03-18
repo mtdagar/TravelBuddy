@@ -5,6 +5,8 @@
 	$password = "";
 	$dbname = "travelbuddy";
 
+	$userLoggedIn;
+
 	ob_start();
 	session_start();
 

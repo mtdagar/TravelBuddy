@@ -1,5 +1,5 @@
 <?php
-  
+
   	include("includes/config.php");
   	include("includes/classes/Constants.php");
 
@@ -8,7 +8,7 @@
     $userLoggedIn = $_SESSION['userLoggedIn'];
   	}else{
 		$message = Constants::$loginRequired;
-	
+
 		echo("<script>
 			alert('$message');
 			window.location.href='login.php';
@@ -31,7 +31,7 @@
     	}else{
     		return $value->startLocation;
     	}
-    	
+
   	}
 
   	function getEndLocation($em){
@@ -40,8 +40,7 @@
     	$value = mysqli_fetch_object($result);
     	return $value->endLocation;
   	}
-
-
+    
 ?>
 
 <!DOCTYPE html>
@@ -58,23 +57,13 @@
 
 	<!-- Bootstrap CDN -->
 	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
-	
+
 	<!-- Google font -->
 	<link href="https://fonts.googleapis.com/css?family=Poppins" rel="stylesheet">
 
-	
-    <!-- Here Maps dependencies -->
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-core.js"
-    type="text/javascript" charset="utf-8"></script>
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-service.js"
-    type="text/javascript" charset="utf-8"></script>
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-mapevents.js" 
-     type="text/javascript" charset="utf-8"></script>
-    <script src="http://js.api.here.com/v3/3.0/mapsjs-ui.js" 
-      type="text/javascript" charset="utf-8"></script>
-    <link rel="stylesheet" type="text/css" 
-      href="http://js.api.here.com/v3/3.0/mapsjs-ui.css" />
-    
+  <!-- Google Maps API -->
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyARMwFdkCA_ALFvh9aFuJfixwCoinGoXbQ&libraries=places"></script>
+
 
 	<!-- Custom stylesheet -->
 	<link rel="stylesheet" href="assets/css/main-page.css">
@@ -84,15 +73,13 @@
 
 <body>
 
-
 	<!-- MAP -->
-	<div id="mapContainer"></div>
-
+	<div id="map"></div>
 
 
 	<!-- Sidebar -->
   	<div class="sidebar">
-  		
+
   		<div class="user-controls">
 
   			<a href="#" class="control-icon" id="chatIcon"><span>Chat</span></a>
@@ -102,7 +89,7 @@
   		</div>
 
   		<form class="sidebar-form">
-		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point" 
+		    <input type="text" class="form-control" id="startLocation" placeholder="Starting point"
 		    	<?php if(getStartLocation($_SESSION['userLoggedIn'])!=null) : ?>
 		     		value="<?php echo getStartLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
@@ -112,18 +99,21 @@
 		     		value="<?php echo getEndLocation($_SESSION['userLoggedIn']) ?>"
 		     	<?php endif; ?>>
 
-		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Submit</button>
+		  	<button type="button" class="btn btn-primary" id="setLocationBtn">Find Buddies</button>
 		</form>
 
 		<div class="sidebtn"></div>
 
 	</div>
-  
 
-  	<script src='https://code.jquery.com/jquery-3.2.1.js'></script>
+  <!-- jquery CDN -->
+  <script src='https://code.jquery.com/jquery-3.2.1.js'></script>
 
-    <script type="text/javascript" src="includes/handlers/main-page.js"></script>
+  <!-- Custom JS for Main Page -->
+  <script type="text/javascript" src="includes/handlers/main-page.js"></script>
 
-    <script src="includes/handlers/map.js" type="text/javascript" charset="utf-8"></script>
+  <!-- Custom JS for Maps -->
+  <script type="text/javascript" src="includes/handlers/map.js"></script>
+
 </body>
 </html>
