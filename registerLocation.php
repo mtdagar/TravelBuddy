@@ -39,47 +39,6 @@
 	}
 ?>
 
-
-<script>
-	/*function calculateAndDisplayRoute() {
-
-		var directionsService = new google.maps.DirectionsService;
-		var directionsDisplay = new google.maps.DirectionsRenderer;
-
-		console.log('running service');
-
-		directionsService.route({
-
-				origin: document.getElementById('startLocation').value,
-				destination: document.getElementById('endLocation').value,
-				travelMode: 'DRIVING'
-				}, function(response, status) {
-					if (status === 'OK') {
-						//set Route
-						directionsDisplay.setDirections(response);
-
-						//JSON like objects containing coordinates
-						var routeCoordinates = response.routes[0].overview_path;
-						coordinates = [];
-
-						//push lats and longs from route to a simple 2d array
-						routeCoordinates.forEach(function(val){
-							coordinates.unshift([val.lat(), val.lng()]);
-						});
-
-						<?php
-							// $GLOBALS['coordinates'] = coordinates;
-						 ?>
-						console.log(coordinates[0][0]);
-
-					} else {
-						window.alert('Directions request failed due to ' + status);
-					}
-				}
-		);
-	}*/
-</script>
-
 <html>
 
 <head>
@@ -184,11 +143,11 @@
 	</form>
 
 	<!-- Custom JS for Main Page -->
-  	<script type="text/javascript" src="includes/handlers/register-location.js"></script>
+  <script type="text/javascript" src="includes/handlers/register-location.js"></script>
 
-		<!-- jQuery -->
-	  <script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
-		<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
+	<!-- jQuery -->
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js'></script>
+	<script src='http://cdnjs.cloudflare.com/ajax/libs/jquery-easing/1.3/jquery.easing.min.js'></script>
 
 </body>
 

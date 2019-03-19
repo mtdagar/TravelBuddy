@@ -41,7 +41,7 @@ function calculateAndDisplayRoute(directionsService, directionsDisplay) {
 							coordinates.unshift([val.lat(), val.lng()]);
 						});
 
-						console.log(coordinates[0][0]);
+						//console.log(coordinates[0][0]);
 
 						getRoutes(coordinates);
 

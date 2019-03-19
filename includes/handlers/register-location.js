@@ -55,7 +55,7 @@ function post(coordinates, origin, destination) {
     storeRoute : 1,
   }, function (response) {
     if(response == 'true' || response == '1') {
-      alert("Saved your route to db");
+      window.location = 'registerBio.php';
     }
     else {
       alert("Some error occureed");
