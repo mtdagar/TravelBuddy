@@ -69,7 +69,7 @@
 
 
 	<!-- Custom stylesheet -->
-	<link rel="stylesheet" href="assets/css/main-page.css">
+  <link rel="stylesheet" href="assets/css/main-page.css">
 	<link rel="stylesheet" href="assets/css/map.css">
 </head>
 
@@ -79,7 +79,6 @@
 	<!-- MAP -->
 	<div id="map"></div>
 
-
 	<!-- Sidebar -->
   	<div class="sidebar">
 
@@ -88,6 +87,7 @@
   			<a href="#" class="control-icon" id="chatIcon"><span>Chat</span></a>
   			<a href="#" class="control-icon" id="buddiesIcon"><span>Buddies</span></a>
   			<a href="#" class="control-icon" id="bellIcon"><span>Notifications</span></a>
+        <a href="#" class="control-icon profile-icon" id="profileIcon"><span>Profile</span></a>
 
   		</div>
 
@@ -107,6 +107,45 @@
 
 		<div class="sidebtn"></div>
 
+    <!-- PROFILE CARDS -->
+
+    <div class="elements">
+      <div class="titleCard first">
+        <div class="info">
+          <img src="assets/images/1.jpeg" alt="">
+          <h1 class="buddyCount">Buddies: 15</h1>
+          <h1 class="postCount">Posts: 5</h1>
+        </div>
+        <hr>
+        <h1 id="name">Travis Taylor</h1>
+        <img class="options" src="assets/icons/buddy.png" alt="">
+        <img class="options" src="assets/icons/message.png" alt="">
+      </div>
+
+      <div class="titleCard">
+        <div class="info">
+          <img src="assets/images/2.jpeg" alt="">
+          <h1 class="buddyCount">Buddies: 25</h1>
+          <h1 class="postCount">Posts: 13</h1>
+        </div>
+        <hr>
+        <h1 id="name">Kira Henderson</h1>
+        <img class="options" src="assets/icons/buddy.png" alt="">
+        <img class="options" src="assets/icons/message.png" alt="">
+      </div>
+
+      <div class="titleCard">
+        <div class="info">
+          <img src="assets/images/6.jpeg" alt="">
+          <h1 class="buddyCount">Buddies: 5</h1>
+          <h1 class="postCount">Posts: 1</h1>
+        </div>
+        <hr>
+        <h1 id="name">John Briggs</h1>
+        <img class="options" src="assets/icons/buddy.png" alt="">
+        <img class="options" src="assets/icons/message.png" alt="">
+      </div>
+    </div>
 	</div>
 
   <!-- jquery CDN -->

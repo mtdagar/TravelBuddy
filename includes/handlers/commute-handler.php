@@ -19,4 +19,5 @@ if(isset($_POST['storeRoute']) && isset($_SESSION['userLoggedIn']) && $_SESSION[
 
   die();
 }
+
  ?>

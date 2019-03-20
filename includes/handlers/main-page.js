@@ -35,7 +35,17 @@ function getRoutes(coordinates) {
 
 function calculateCommon(coordinates, response){
 
-	return console.log(response);
+	console.log(coordinates);
+	console.log(JSON.parse(response[0][1]));
+
+	
+
+
+
+
+
+
+/*
 	for(var i=0;i<response.length;i++) {
 		var row = response[i];
 		if(row[1] == '') {
@@ -43,7 +53,9 @@ function calculateCommon(coordinates, response){
 		}
 
 		var route = JSON.parse(row[1]);
+		console.log(route);
 	}
+*/
 }
 
 

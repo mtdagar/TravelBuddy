@@ -2,6 +2,65 @@ body{
   font-family: Poppins;
 }
 
+.titleCard  {
+  padding: 15px;
+  background-color: white;
+  border-radius: 10px;
+  margin: 5px 40px;
+}
+
+.first{
+  margin: -95px 40px 0 40px;
+}
+
+.info{
+  display: grid;
+  grid-template-columns: 0.8fr 1.2fr;
+}
+
+.info img{
+  grid-column: 1;
+  grid-row: 1/3;
+}
+
+.info h1{
+  justify-self: start;
+  align-self: center;
+}
+
+.buddyCount{
+  grid-column: 2;
+  grid-row: 1;
+  margin-top: 30px;
+}
+.postCount{
+  grid-column: 2;
+  grid-row: 2;
+  margin-bottom: 30px;
+}
+
+.info img {
+  height: 100px;
+  border-radius: 50%;
+}
+
+.info h1{
+  color: #606060;
+  font-size: 15px;
+}
+
+#name{
+  font-weight: bold;
+  font-size: 20px;
+  display: inline;
+}
+
+.options{
+  width: 18px;
+  float: right;
+  margin-right:10px;
+}
+
 .sidebar{
   position: fixed;
   top: 0;
@@ -19,9 +78,9 @@ body{
 }
 
 .sidebtn{
-  width: 30px;
-  height: 30px;
-  margin-left: 360px;
+  width: 15px;
+  height: 15px;
+  margin-left: 380px;
   margin-top: 100px;
   border: 4px solid #fff;
   outline: none;
@@ -56,7 +115,7 @@ body{
 
 .user-controls{
   display: inline-flex;
-  margin: 70px 0px 0px 150px;
+  margin: 70px 0px 0px 190px;
   -ms-transform:translate(-50%,-50%);
   -webkit-transform:translate(-50%,-50%);
   transform:translate(-50%,-50%);
@@ -72,16 +131,15 @@ body{
   position: relative;
   display: inline-block;
   width:40px;
-  height:28px;
+  height:30px;
   padding-top:12px;
-  margin:0 20px;
+  margin:0 20px -15px 20px;
   -o-transition:all .5s;
   -webkit-transition: all .5s;
   -moz-transition: all .5s;
   transition: all .5s;
    -webkit-font-smoothing: antialiased;
 }
-
 
 /* pop-up text */
 
@@ -109,8 +167,8 @@ body{
 
 .control-icon span:before {
   content:'';
-  width: 0; 
-  height: 0; 
+  width: 0;
+  height: 0;
   border-left: 5px solid transparent;
   border-right: 5px solid transparent;
   border-top: 5px solid #fff;
@@ -139,3 +197,10 @@ body{
   background: url('../icons/bell_32px.png')no-repeat center;
 }
 
+#profileIcon{
+  background: url('../icons/user_white_32px.png')no-repeat;
+  background-size: 65px;
+  height: 65px;
+  width: 65px;
+  margin-top: -15px;
+}
