@@ -16,7 +16,7 @@ A collaborative project in development by Meet Dagar, Dikshant Rawat and Aditya 
 * JavaScript
 * Bootstrap
 * jQuery
-* Here Maps API
+* Google Maps API
 
 
 
