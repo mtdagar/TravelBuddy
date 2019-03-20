@@ -35,7 +35,15 @@ function getRoutes(coordinates) {
 
 function calculateCommon(coordinates, response){
 
-	return console.log(response);
+	console.log(coordinates);
+	console.log(JSON.parse(response[0][1]));
+
+	
+
+
+
+
+
 
 /*
 	for(var i=0;i<response.length;i++) {
